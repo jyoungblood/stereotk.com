@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html class="h-100">
+<head>
+
+  <title>STEREO - Internet Toolkit</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="./css/lib/tachyons.min.css" />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"> -->
+
+  <!-- <script src="./js/lib/jquery.min.js"></script> -->
+  <!-- <script src="//unpkg.com/alpinejs" defer></script> -->
+
+  <!-- <script src="./js/lib/instant.page.min.js"></script> -->
+  <!-- <script src="https://cdn.skypack.dev/@hotwired/turbo"></script> -->
+
+</head>
+<body class="h-100 sans-serif">
+
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap');
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  .sys-blue {
+    color: blue;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom version of prism: https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+apacheconf+handlebars+markup-templating+nginx+php+sql&plugins=normalize-whitespace+toolbar+copy-to-clipboard -->
+
+<link rel="stylesheet" href="./css/prism.stereo.css" />
+<script src="./js/prism.stereo.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"> -->
+
+<style>
+
+	pre[class*="language-"] {
+		border-radius: 0;
+	}
+
+	code[class*="language-"],
+	pre[class*="language-"] {
+	/* 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
+		font-family: 'Fira Code', monospace;
+/* 		font-family: 'IBM Plex Mono', monospace; */
+		font-size: 0.9rem;
+		line-height: 1.55;
+		margin-bottom: 1.5rem;
+	}
+	.fira{
+		font-family: 'Fira Code', monospace;
+	}
+	
+	.f7{
+	  font-size: .675rem;
+	}
+	
+	.sidebar-nav a:hover{
+		text-decoration: underline;
+	}
+
+	@media screen and (min-width: 48em){
+		.content-frame{
+			margin-left: 20%;
+		}	
+	}
+
+	.hover-o-50:hover{
+		opacity: 0.3;
+	}
+
+
+</style>
+
+
+
+
+	<div class="w-20-ns w-100 pa3 h-100-ns overflow-auto-ns fixed-ns top-0 left-0">
+
+		<div class="flex mb2 pl1">
+
+			<a href="/" class="black no-underline"><img src="./images/stereo-headphones-black-big.png" class="" style="height: 2.55rem;" /></a>
+			<div class="ml2 pl1 pt1 lh-title">
+				<div class="f5 fw7"><a class="black no-underline" href="/">STEREO</a></div>
+				<div class="f6">INTERNET TOOLKIT</div>
+			</div>			
+
+
+		</div>
+
+
+
+		<div class="bw2 bt b--black mb3"></div>
+
+
+		<div class="flex flex-wrap mb2">
+			<div class="w-50 pr1 mb2">
+<a href="/#ethos" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Ethos</a>
+			</div>
+
+			<div class="w-50 pl1 mb2">
+<a href="/#ethos" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Support</a>
+			</div>
+
+
+			<div class="w-50 pr1 mb2">
+<a href="https://github.com/hxgf/stereo" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Source</a>
+			</div>
+			
+			<div class="w-50 pl1 mb2">
+<a href="https://www.craft.do/s/uCvRW8Z1dVLZaq" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Roadmap</a>
+			</div>
+
+
+			<div class="w-50 pr1 mb2">
+<a href="https://github.com/hxgf/stereo/issues" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Issues</a>			
+			</div>
+			
+			<div class="w-50 pl1 mb2">
+<a href="https://github.com/hxgf/stereo/releases" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Changelog</a>			
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+
+		<div class="bw2 bt b--black mb2"></div>
+
+
+		<div class="f6 fw5 mb2 lh-title tc"><a href="/" class="black no-underline">DOCUMENTATION &mdash; v1.4.0</a></div>
+
+
+		<div class="bw2 bt b--black mb3"></div>
+
+<!-- 		sidebar menu -->
+
+<!-- {{!-- fixit highlight currently-focused section of documentation -- stereo docs - keep track of current page/nav location w/ intersection observer -- --}} -->
+<!-- {{!-- https://css-tricks.com/table-of-contents-with-intersectionobserver/ --}} -->
+
+		<div class="sidebar-nav">
+
+			<div class="mb2">
+	      <a href="/#installation" class="black no-underline fw7 f6">Installation / Setup</a>			
+			</div>
+			<div class="mb2">
+	      <a href="/#routing" class="black no-underline fw7 f6">URL Routing</a>
+			</div>
+	      <div class="pl1 f7">
+		      <a href="/#routing-http-verbs" class="black no-underline dib mb2 lh-title">Routing with HTTP verbs</a><br />
+		      <a href="/#routing-any-all" class="black no-underline dib mb2 lh-title">Accepting any/all matching HTTP requests</a>
+	      </div>
+
+			<div class="mb2">
+	      <a href="/#rendering" class="black no-underline fw7 f6">Rendering Content</a>
+			</div>
+			<div class="mb2">
+	      <a href="/#templates" class="black no-underline fw7 f6">Templates</a>
+			</div>
+			<div class="mb2">
+	      <a href="/#handlebars-helpers" class="black no-underline fw7 f6">Handlebars Helpers</a>
+			</div>
+			<div class="mb2">
+	      <a href="/#requests" class="black no-underline fw7 f6">HTTP Requests</a>
+			</div>
+			<div class="mb2">
+	      <a href="/#cookies" class="black no-underline fw7 f6">Cookies</a>
+			</div>
+			<div class="mb2">
+	      <a href="/#data" class="black no-underline fw7 f6">Data</a>
+			</div>
+			<div class="mb2">
+	      <a href="/#misc" class="black no-underline fw7 f6">Misc Helpers</a>
+			</div>
+
+			<div class="mb2">
+	      <a href="/#advanced" class="black no-underline fw7 f6">Advanced</a>
+			</div>
+
+		</div>
+
+	</div>
+	
+
+	<div class="content-frame w-80-ns w-100 h-100">
+	<div class="h-100 pa3 pl0-ns">
+
+
+
+<!-- {{!-- css colors: http://davidbau.com/colors/ --}} -->
+
+<!-- {{!-- limegreen --}} -->
+<!-- {{!-- palegreen --}} -->
+<!-- {{!-- peachpuff --}} -->
+
+  <section id="home" class="h-100 relative" style="background: palegreen;">
+
+    
+
+		<div class="dt h-100 center">
+		  <div class="dtc h-100 v-mid tc">
+        <!-- {{welcome_icon}} -->
+        <!-- '⦛','⦝','⦤','⦥','⧥','⧷','⨬','⨳','⩸','▨','◯','◉','◎','𐌆','♥','☼','⁙' -->
+			  <div style="font-size: 15rem;" class="mb4"><a href="https://github.com/hxgf/stereo/archive/refs/tags/1.4.0.zip" class="black no-underline">⁙</a></div>
+				<a href="https://github.com/hxgf/stereo/archive/refs/tags/1.4.0.zip" class="bg-black white pv2 ph3 br2 no-underline hover-underline f6 hover-o-50">&darr;&nbsp; stereo-1.4.0.zip</a>
+		  </div>
+		</div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+	<section id="intro" class="black-90">
+
+
+
+
+
+
+<div class="center tc pt6">
+
+
+
+
+*** WORKING ON THE DOCS AS I HAVE TIME ***<br /><br />
+
+(i don't have a lot of time)<br /><br />
+
+
+<br /><br /><br />
+
+
+
+<pre class="fira f7"> ______     ______    ______     ______     ______     ______    
+/\  ___\   /\__  _\  /\  ___\   /\  == \   /\  ___\   /\  __ \   
+\ \___  \  \/_/\ \/  \ \  __\   \ \  __<   \ \  __\   \ \ \/\ \  
+ \/\_____\    \ \_\   \ \_____\  \ \_\ \_\  \ \_____\  \ \_____\ 
+  \/_____/     \/_/    \/_____/   \/_/ /_/   \/_____/   \/_____/ </pre>
+    
+<div class="fira pt3 pb4 f7 lh-copy">
+	INTERNET TOOLKIT<br />
+	1.4.0
+</div>
+
+</div>
+
+
+
+<!-- {{!-- fixit --}} -->
+<!-- {{!-- stereo - Kill the “literally the easiest” stuff
+Oxygen is (allegedly) the easiest, diff workflow (& diff use base tbh) --}} -->
+
+
+			<div class="mw7 center mv5 tl lh-copy pa3 f4">
+			Stereo is a "full-stack" framework for building web sites and internet-based applications.<br /><br />
+			
+			It was designed to make the process of developing and maintaining potentially-complex dynamic server-rendered applications as easy as possible.<br /><br />
+			
+			In fact, we like to say it's "literally the easiest way to build web sites"
+			<br /><br /><br />
+
+			<div class="f3 mb3 b">Key Features:</div>
+
+			<div class="flex f6">
+				<div class="pr3">
+
+					<div class="flex items-start mb2">
+						<span class="fw7 mr1">•</span> <span>Flexible routing system with ~pretty~ urls.</span>
+					</div>
+
+					<div class="flex items-start mb2">
+						<span class="fw7 mr1">•</span> <span>Powerful &#123;&#123;handlebars&#125;&#125; templates</span>
+					</div>
+
+					<div class="flex items-start mb2">
+						<span class="fw7 mr1">•</span> <span>Convenient MYSQL CRUD functionality</span>
+					</div>
+
+					<div class="flex items-start mb2">
+						<span class="fw7 mr1">•</span> <span>Helpful utility functions *(for working with cookies, http requests, email, etc)*</span>
+					</div>
+
+				</div>
+				<div class="pl3">
+
+					<div class="flex items-start mb2">
+						<span class="fw7 mr1">•</span> <span>Sensible *(and minimal)* front-end boilerplate ✨</span>
+					</div>
+
+					<div class="flex items-start mb2">
+						<span class="fw7 mr1">•</span> <span>Straightforward application structure.</span>
+					</div>
+
+					<div class="flex items-start mb2">
+						<span class="fw7 mr1">•</span> <span>NO BUILD SYSTEM -- edit your site on a web server over ftp like your grandparents did!</span>
+					</div>
+
+					<div class="flex items-start mb2">
+						<span class="fw7 mr1">•</span> <span>Works with most $5/mo shared web hosting providers.</span>
+					</div>
+
+				</div>
+			</div>
+
+			</div>
+
+
+
+
+<!-- 
+			{{!-- ETHOS --}}
+			{{!-- brutalist, small, simple architecture --}}
+			{{!-- complexity as needed, but keep it minimal --}}
+
+			{{!-- ROADMAP / FUTURE --}}
+			{{!-- we want to keep this framework simple and evergreen. anything resembling CMS functionality or SDK patterns are going into the darkwave project learn more at darkwave . ltd --}}
+
+			{{!-- CONTRIBUTION --}} -->
+
+
+
+
+
+
+
+	</section>
+
+
+
+
+
+	<section id="ethos" class="black-90 bg-black-05 pa5 mb6">
+
+
+				<div class="lh-copy mb4 f3 fw7">Build the simplest possible version<br /> and then move on with your life!</div>
+
+
+ethos / core concepts (brutalism, simplicity, etc)<br />
+* brutalist in theory/practice, not the kitschy web aesthetic *<br />
+don't build things that impress your colleagues, build something that solves a problem and gives you time to spend with your family and friends<br /><br />
+
+web development doesn't NEED to be complex, you don't have to introduce a shitload of complexity into your application just to get stuff online. it CAN be really easy and simple.<br /><br />
+
+FAQs? support? contribution guidelines?<br />
+-- contributions are welcome, but not guaranteed to be merged into project.<br />
+-- go ahread and submit issues, but i'm not gonna fix your problems. (for free)
+	- pay hxgf (jy) to help w/ support, set up / deploy / consulting
+
+
+	</section>
+
+
+
+
+<div class="dn">
+	
+stereo - things you might choose when starting a new project (tachyons, jq, font awesome, etc) - all wired up and ready
+to go 👍
+
+
+	
+	stereo - primitive/generic - simplified express concept for presentation (user-facing) web application layer - designed to make routing and display a breeze
+	- designed to handle the foundation/baseline setup for server-rendered web apps and enable FAST and efficient dev workflow (remove friction, lower barriers to productivity)
+	
+
+
+
+<br /><br />
+
+
+```jsx
+stereo is:
+- mysql
+- php
+- handlebars
+- alto
+- db_handlers
+- helper abstractions (cookies, email, http requests, settings, etc)
+- tachyons
+- alpine
+- turbolinks
+- workflow/architecture/conventions/opinions
+```
+
+
+<br /><br />
+
+
+## addl features/content
+
+
+-- links to docs for all included libs (tachyons, alto, etc)
+
+
+stereo / dw docs - want a list of all globally available variables (user_group, is_admin, user_id, etc) (in addition to functions)
+
+
+supplemental handlebars guide - we have a few helpers, here's alink to more helpers (find whatever the giant php repo of custom hbars helpers)
+	here's how/where to add them to your thing...if that's your thing
+
+guide - how to support postgres (or other dbs) instead of mysql w/ pdo
+
+
+nginx support guide
+	just make an nginx config available that does everything the htaccess does
+	nginx support guide http://altorouter.com/usage/rewrite-requests.htm
+
+
+stereo setup guide
+- post/article about how to install and best practices for setting up your site
+    not particularly covered by the framework, but good practices (script preloading, enable gzip, simple server-level optimizations / easy wins for perf)
+    here's where to generate favicons, get loader icons, cool 3rd-party libs we like (dropzone, fancybox, etc)
+
+GZIP/pagespeed compression (stuff you can put in your htaccess?)
+https://seesparkbox.com/foundry/gzip_is_really_good_at_like_compressing_repetitive_text_and_stuff
+https://stackoverflow.com/questions/9140178/how-can-i-tell-if-my-server-is-serving-gzipped-content
+https://css-tricks.com/snippets/htaccess/active-gzip-compression/
+https://varvy.com/pagespeed/enable-compression.html
+https://gtmetrix.com/enable-gzip-compression.html
+https://www.sitepoint.com/community/t/automatic-compression-css-js-images/26466
+https://seesparkbox.com/foundry/gzipisreallygoodatlikecompressingrepetitivetextandstuff
+https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/
+
+
+
+
+want to make templates for stereo/dw
+like cargo https://cargo.site/Templates
+that you can just use in your (/my) sites
+but maybe based on tailwind (or tachyons)
+
+
+
+
+
+    []components gallery
+          - list of copy/paste components to throw into your project 
+            - php snippets too (bookmarks for snippets that manipulate text, arrays, dates, etc) (shit i always have to look up lol)
+            - and if you like functional components and data management, let me talk to you about our lord and savior darkwave
+
+
+    []future - tutorials (medium/devto articles? video screencasts) 
+        - how to build ___ w/ stereo (& directus/dw)
+        - compiled stimulus w/ stereo/dw/lexxi?
+            https://stimulusjs.org/handbook/installing#using-without-a-build-system
+            && turbolinks! https://github.com/turbolinks/turbolinks
+        - examples for how to integrate w/ cloud services (s3, twilio, mailgun, etc)
+
+        []cool software you can use w/ this (write some tutorial examples)
+            - want to do functional programming w/ php? https://github.com/kapolos/pramda
+            - caching / key/val storage http://www.scrapbook.cash/
+            stereo docs list of cool resources/patterns fw-agnostic libs for common solutions (vanilla js, etc)
+              like this kind of stuff https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/
+        []collection of cool resources
+    * 58b of css to look great everwhere https://jrl.ninja/etc/1/
+        also -- this looks hella badass https://teutonic.co/
+            lightweight default styles / jumpstart web dev projects
+    * html5bp is not for everyone but it works for a lot of ppl https://github.com/h5bp/html5-boilerplate
+        * you concerned w/ performance? check this out: https://github.com/h5bp/server-configs-apache
+
+
+
+
+
+
+stereo find a cool diagram of a component stereo system & note components (speakers, receiver, cd player, wires, remote, etc)
+
+    then show a video of what stereo covers (database, router, templates, utility functions, org system/workflow/conventions, etc)
+
+    make analogies where appripriate
+        it's like a component stereo system. the important part is the content/application (bring your cds, records, karaoke idk) (write your logic in a neeat and organized way, what are you making?)
+
+
+
+
+docs - simple outline (w/ diagrams) about what stereo does
+    highlight the important pieces (htaccess, index/bootstrap logic, config, routes, etc)
+
+    []stereo docs - make a cool diagram of the application structure
+        -- where it fits in the "stack"
+        -- problems it solves, what it covers, where it stops
+    file tree (all the pieces, everything that's included)
+
+
+
+
+
+education - screencasts on how the system works, what it does, helper functions, workflows, app structure, "boostrap"/processing logic, etc
+
+
+
+Stereo docs example of how one would use with composer meh
+
+
+
+stereo list of recommended hosts, serverless setup tutorials, how to set up on varios platforms (do, linode, ec2, etc)
+
+
+
+
+
+
+
+[]outline system requirements
+
+
+
+
+
+- something about the file structure (everything is organized in a very straightforward manner)
+
+- global array_encode
+- global array_decode
+- stereo helpers (is_admin, is_auth, year, etc) need documentation (what's available, etc)
+- "we're not including a lot of js stuff bc we don't want to make TOO many assumptions about what you're doing. darkwave, however, continues this line of thought (w/ the patterns) and provides provides a ton of js resources for building all kinds of stuff on top of this"
+- re: favicons -- you can do whatever you want obv, but we generated the favicons here: https://www.favicon-generator.org/
+	-- it seems like the 'best practices' for favicons change frequently. we did a few cross-platform ones (here), check out the 'favicons' partial if you want to see what's going on. btw this includes a manifest.json, so if you're doing anything w/ that, track it down and edit accordingly (it's in images/favicons whatever)
+
+
+
+
+
+stereo docs
+- writing/using handlebars functions
+- adding functions/methods to the "system" class
+    - which variables and functions are available
+
+
+
+
+
+colophon - list of projects we utilize (alto router, hbars, etc) and credits for the developers who made those things
+		-- stereo docs colophon - record of all the 3rd-party libs (alto, hbars, etc)
+"credits" / documentation of what's included
+
+
+outline vision (simplicity / limited scope, intentionally limited, evergreen api, etc), contributions are welcome, but all contributions will be considered with this perspective in mind
+      - coding styleguide
+        - coding conventions for building plugins & themes
+        - requirements for dependencies (3rd-party lib restrictions, etc)
+        - quasi-open (juried, anyone is welcome but shit needs to be approved by core group or whatever)
+
+
+
+
+
+[]boilerplate/demo - turn-key styleguide w/ light tachyons components
+    []original demo content (what do horses eat, partials, loops, etc)
+    []live version where i can test new stuff (/validate that things are working)
+    []demo.stereotk.com
+
+
+
+
+
+<br /><br />
+
+
+
+
+# EXTERNAL RESOURCES
+
+
+Stereo meta - cool to have a front end resources collection, for doing cool stuff w fonts and css, normal stuff you can
+do w front end stuff, don’t need stereo, but very helpful for dev w stereo
+Hxgf fe- curated resources (good articles, utility sites, etc)
+
+
+
+
+
+stereo cool alt lib for db stuff? https://github.com/troelskn/pdoext
+
+
+
+stereo/dw - cool to have a collection of cool resources you can use to make web sites out of nothing (copy/paste elements & stuff)
+    https://www.emojicopy.com/
+    https://www.toptal.com/designers/htmlarrows/
+    https://thenounproject.com/
+    https://github.com/tabler/tabler-icons
+
+
+
+
+
+[]resource links 
+            -- bitchin tachyons components: http://tachy.tools/
+            - add links to component docs
+                - http://tachyons.io// (ships w/ 4.1.0 (just like rails!))
+                - http://tachyons.io/components/
+                    - TACHYONS COLORS: http://tachyons.io//themes/skins/
+                    - it would be really cool if someone made a cool chart of these
+                - https://www.tachyonstemplates.com/components
+                - https://www.tachyonstemplates.com/
+        
+                - handy tachyons pieces
+                    - http://tachyons.io//typography/scale/
+                    - http://tachyons.io//typography/line-height/
+                    - http://tachyons.io//layout/display/
+                    - http://tachyons.io//layout/heights/
+                    - http://tachyons.io//elements/lists/
+                    - http://tachyons.io//layout/spacing/
+                    - http://tachyons.io//typography/text-align/
+                    - http://tachyons.io//elements/tables/
+                    - http://tachyons.io//layout/floats/
+                    - http://tachyons.io//layout/widths/
+                    - http://tachyons.io//layout/heights/
+                    - http://tachyons.io//themes/borders/
+                    - http://tachyons.io//typography/text-decoration/
+                    - http://tachyons.io//typography/font-style/
+                    - http://tachyons.io//elements/links/
+                    - http://tachyons.io/components/layout/flag-object/index.html
+                    - http://tachyons.io/components/lists/slab-stat/index.html
+                    - make notes about easily finding components / building patterns with both libs
+                    - tachyons styles
+                        - http://tachyons.io//table-of-styles/
+                        - http://tachyons.io//table-of-properties/
+                    - tachyons crash course
+                        - https://iamsteve.me/blog/entry/why-you-should-use-tachyons-to-make-css-easier
+                - alto router docs http://altorouter.com/usage/mapping-routes.html
+                - something about breakpoints
+                    - we set a few for you, if you want to target specific devices (it happens sometimes, ok?)
+                    - if you want to use the tachyons breakpoints (s/m/l) that's a good idea, too. good example for that kind of thing here: http://tachyons.io//typography/text-decoration/
+
+/* breakpoints match Tachyons media queries: https://github.com/tachyons-css/tachyons-queries */
+/* need to be more specific? check this out: https://responsivedesign.is/develop/browser-feature-support/media-queries-for-common-device-breakpoints */
+
+
+<br /><br /><br /><br />
+
+stereodocs++
+- nice to have a list of breakpoints (copy paste, like if you need to hunt down the media query to target small (phone)
+devices, and want to keep tachyons-consistent resolution,,,like i'm doing right now)
+
+
+
+<br /><br />
+diagrams of what the system does (processing model, "flow" of logic, how templates are processed, etc)
+
+
+	<br /><br />
+
+stereo docs - if you jive with the ethos of this fw and this workflow for developing, you may be interested in our more "batteries-included" "full-stack" toolkit for developing web applications. it takes these conventions and adds convenient tools (admin, abstractions) to make the development of more complex systems a relative ~~breze~~
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="pa5 bg-black f1 tc white fw7">
+	DOCUMENTATION &mdash; v1.4.0
+</div>
+
+
+
+
+
+
+  <section class="mb5 pt4" id="installation" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">INSTALLATION / SETUP</div>
+
+
+		
+		
+		<p class="lh-copy">
+		
+		
+		[[FIRST PRINCIPLES
+		
+		
+		NEW SECTION - that briefly outlines the impetus for creating the framework, the need it fills, and the ideals/conventions intended to be used for creating apps/sites w/ the framework
+		]]<Br/><br />
+		
+		This tool kit was designed to make it easy to develop internet-based applications that operate in perpetuity with minimal technical overhead. Templates are dynamically rendered on the server and delivered as static html. This frameworks provides organization for your project and conventions for making technical decisions.
+		
+		
+		</p>
+
+
+
+
+
+
+    <div class="cf mb3">
+			
+			<div class="fl w-50 pr3">
+
+        <div class="pt3 fw7 f3 mb2">Installation</div>
+
+          <li class="mb1"><a href="https://github.com/hxgf/stereo/archive/master.zip">Download the application files</a>
+            and put them on your server or dev environment.</li>
+          <li class="mb1">Edit the config file: <i class="gray">./settings.php</i></li>
+          <li class="mb1"><a href="/#routing">Set up some routes</a>: <i class="gray">./controllers/_routes.php</i>
+          </li>
+          <li class="mb1"><a href="/#templates">Make some templates</a>: <i class="gray">./pages/index.hbs</i></li>
+          <li class="mb1">Go nuts!</li>
+
+			</div>
+
+			<div class="fl w-50 pr3">
+
+        <div class="pt3 fw7 f3 mb2">Server Requirements</div>
+
+          <li>PHP >= 5.3</li>
+          <li>MYSQL >= 3.0</li>
+          <!-- fixit accuracy -->
+          <li>Apache >= 2.4 <i class="gray">(nginx support coming soon)</i></li>
+					<li>          
+					optional
+					- allow_url_fopen (?? or whatever...if uploading files)
+					- imagemagick (if messing with images)
+					- apc (if you want to use db caching)
+					</li>
+
+			</div>
+
+    </div>
+
+
+
+    <p class="lh-copy i f7">* NOTE: If you're using <a href="http://panic.com/coda/" target="_blank">Coda</a>, install
+      the <a href="https://github.com/Cargo/Handlebars.mode" target="_blank">handlebars mode</a> for syntax highlighting
+      in your templates.</p>
+
+
+    <!-- 		fixit copy -->
+    
+		<div class="pt3 fw7 f3 mb2">Application Structure</div>
+
+		<p class="lh-copy">
+	it's pretty easy to see where everything is and what to do
+	settings (global site vars, db setup, this is a good place to set timezone/debugging/upload/php settings, too)
+	global functions / handlebars helpers
+	controllers / routes [back end code]</p>
+
+		<p class="lh-copy">
+			[cool to have a image or diagram of the folder tree / application structure]
+		</p>
+
+		<p class="lh-copy">
+    	you can organize the controllers folder however you want, it doesn't matter...just remember to link all the files you add in _routes.php (we want to automatically include all the files in this folder but there's no easy way to do that w/ php so whatev)
+		</p>
+
+
+    <!-- fixit copy -->
+
+    
+		<div class="pt3 fw7 f3 mb2">Included libraries</div>
+
+		<p class="lh-copy">
+<!--
+		- https://github.com/XaminProject/handlebars.php
+			- find more helpers here:
+			- https://github.com/JustBlackBird/handlebars.php-helpers
+			- https://packagist.org/packages/davideorazio/handlebars.php-helpers
+		- https://github.com/dannyvankooten/AltoRouter
+			- how to work w/ the router: https://longren.io/basic-routing-in-php-with-altorouter/
+-->
+		</p>
+
+		<p class="lh-copy">
+		FRONT END STUFF (you can easily comment this out if you don't want it, but it's super handy if you're doing stuff from scratch)
+			- tachyons
+				- http://www.tachyons.io/
+			- jquery (& cookie)
+			- normalize
+		</p>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="mb5 pt4" id="routing" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">URL ROUTING</div>
+    <!-- fixit copy -->
+    		<div class="mb3 black-50 lh-copy">something something define what happens a user visits a given url on your site. by default all of the routes are in ./controllers/_routes.php, but as your site grows, you might find it helpful to break that into different files. organize however you like using php includes, just remember to "link" each new php doc/folder you create and keep all that in "controllers". also.</div>
+
+
+    <div class="pt3 fw7 f3 mb2" id="routing-http-verbs">Routing with HTTP verbs</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">You can accept any type of http request and do things with them (really cool if you want to make an actual rest
+      api with http verbs) (all current http verbs are supported, so you can get as specific as you want)</p>
+
+<pre><code class="language-php">
+	$app->get('/whatever/url/you/define', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->post('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->post('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->put('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->delete('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->patch('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->copy('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->head('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->options('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+
+    <div class="pt3 fw7 f3 mb2" id="routing-any-all">Accepting any/all matching HTTP requests</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">you can do that too (this code will run whenever you try to access this url with any kind of http request)
+    </p>
+
+    
+<pre><code class="language-php">
+	$app->all('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+    
+<pre><code class="language-php">
+	$app->any('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">Parsing URL parameters</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">also, you can do stuff with regex or whatever to retrieve parameters from the urls. here are a few examples.
+      see the alto router docs for more detailed info (stereo uses <a href="http://altorouter.com/" target="_blank">alto
+        router</a>, so you can parse the parameters in a lot of ways. here are a few examples. refer to the docs for
+      more)
+      
+		- https://github.com/dannyvankooten/AltoRouter
+- how to work w/ the router: https://longren.io/basic-routing-in-php-with-altorouter/
+
+      CHECK IT OUT!!! http://altorouter.com/usage/mapping-routes.html
+    </p>
+
+    <!-- fixit copy -->
+    <p class="lh-copy">With or without the trailing slash:</p>
+    
+<pre><code class="language-php">
+	$app->get('/about/?', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+    <!-- fixit copy -->
+    <p class="lh-copy">Using a url parameter as variable:</p>
+    
+<pre><code class="language-php">
+	$app->get('/register/activate/[*:hash]', function($hash){ 
+	  // url parameter is available to your PHP code as $hash
+	});
+</code></pre>
+
+    <!-- fixit copy -->
+    <p class="lh-copy">And of course you can access _GET vars like normal PHP docs:</p>
+    
+<pre><code class="language-php">
+	$app->get('/directory/search/?', function(){ 
+	  // ex url: http://partyphysics.com/directory/search/?fish=betta&dish=espinacas&planet=keppler-452b
+	  echo $_GET['fish'];  // betta
+	  echo $_GET['dish'];  // espinacas
+	  echo $_GET['planet'];  // keppler-452b
+	});		
+</code></pre>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+  <section class="mb5 pt4" id="rendering" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">RENDERING CONTENT</div>
+    <!-- 		fixit copy -->
+    <div class="mb3 black-50 lh-copy">once you have a URL route set up, it's a good idea to define what
+      happens there. the sky is almost the limit for what you can do at that point...it just has to be php. here are
+      some cool options!</div>
+
+
+
+    <div class="pt3 fw7 f3 mb2">render_template ($options)</div>
+    <p class="lh-copy">Render a handlebars template with special STEREO abstraction variables () -- future docs: the passwords part of this requires php >= 5.5</p>
+
+
+    
+<pre><code class="language-php">
+	$app->get('/handlebars-stereo', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'planets',
+	    'title' => 'Cool Planets',
+	    'layout' => false,
+	    'data' => array(
+	      'righteous_content' => 'for_sure',
+	      'planets' => array(
+	        'Mercury', 'Venus', 'Earth', 'Nibiru'
+	      )
+	    )
+	  ));
+	});
+</code></pre>
+
+
+    <div class="pt3 fw7 f3 mb2">render_json ($options)</div>
+    <p class="lh-copy">Render an array of data as a JSON string and send with JSON headers (handy for easily making API responses)</p>
+
+
+<pre><code class="language-php">
+	$app->post('/json-response', function(){
+	  $GLOBALS['app']->render_json(array(
+	    'righteous_content' => 'for sure',
+	    'planets' => array(
+	      'Mercury', 'Venus', 'Earth', 'Nibiru'
+	    )
+	  ));
+	});
+</code></pre>
+
+
+    <div class="pt3 fw7 f3 mb2">render ($template_name, $data)</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">Render a handlebars template using a php array for saturation (note this is not attached to the stereo $app
+      class)</p>
+
+    
+<pre><code class="language-php">
+	$app->get('/handlebars-normal', function(){
+	  echo $GLOBALS['engine']->render('handlebars-example', array(
+	    'righteous_content' => 'for sure',
+	    'planets' => array(
+	      'Mercury', 'Venus', 'Earth', 'Nibiru'
+	    )
+	  ));
+	});
+</code></pre>
+
+
+
+    <!-- 		fixit copy -->
+    <div class="pt3 fw7 f3 mb2">Show a document at a given url</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">want to show just a document? do it like this</p>
+
+    
+<pre><code class="language-php">
+	$app->get('/normal-page', function(){
+	  require __DIR__ . '/pages/whatever.html';
+	});
+</code></pre>
+
+
+
+    <!-- 		fixit copy -->
+    <div class="pt3 fw7 f3 mb2">Send headers</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">send a header. it can be whatever you want...this is nothing special with the framework, just something good to
+      remember</p>
+
+    
+<pre><code class="language-php">
+	$app->get('/whatever', function(){
+	  header("Location: http://partyphysics.com/");
+	});
+</code></pre>
+
+
+    <!-- 		future: render_error -->
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="mb5 pt4" id="templates" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">TEMPLATES</div>
+    <!-- 		fixit copy -->
+    <div class="mb3 black-50 lh-copy">something something templates go in ./pages and you can call them
+      whatever you want. you can organize this however you want, too! link to handlebars docs for more info.</div>
+
+
+    <div class="pt3 fw7 f3 mb2">Basic Variables</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">the simplest thing to do. if you use render_template, stereo includes a few by default (year, etc) as well
+      as a few special things (is_admin, auth, user_id, etc) (title [uses the site title by default, so it's kinda
+      optional])</p>
+
+    <div class="cf">
+      <div class="fl w-50 pr3">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">php</p>
+
+        
+<pre><code class="language-php">
+	$app->get('/variable-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'data' => array(
+	      'fish' => 'salmon',
+	      'dish' => 'paella',
+	      'planet' => 'Nibiru'
+	    )
+	  ));
+	});
+</code></pre>
+
+      </div>
+
+
+      <div class="fl w-50">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">hbs (note about literals { { { } } } vs { { } } -- by default hbars doesn't parse html tags, so if you
+          want to have them rendered, do this)</p>
+
+<pre><code class="language-handlebars">
+	&lt;h2&gt;Simple Variables Example&lt;/h2&gt;
+	&lt;h3&gt;Cool Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
+	&lt;h3&gt;Cool Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
+	&lt;h3&gt;Cool Planet: &#123;&#123;planet&#125;&#125;&lt;/h3&gt;
+</code></pre>
+
+      </div>
+
+    </div>
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">Iterating Arrays</div>
+    <!-- fixit copy -->
+    <p class="lh-copy">it's hella easy, just like a foreach loop. you can even nest the arrays to infinity (and beyond) (sorry) (it
+      can be as simple or complex as you want to make it) (see the demo controller/templates for an example of more
+      complex array iteration)</p>
+
+    <div class="cf">
+      <div class="fl w-50 pr3">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">php (simple & complex example from demo)</p>
+        
+<pre><code class="language-php">
+	$app->get('/array-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'data' => array(
+	      'snacks' => array(
+	        'Carrots',
+	        'Hay',
+	        'Sugar Cubes',
+	        'Oats',
+	        'Apples',
+	        'Weaker Horses'
+	      )
+	    )
+	  ));
+	});
+</code></pre>
+
+      </div>
+
+
+      <div class="fl w-50">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">hbs (simple & complex example from demo)</p>
+
+        
+<pre><code class="language-handlebars">
+	&lt;ul&gt;
+	  &#123;&#123;#each snacks&#125;&#125;
+	  &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
+	  &#123;&#123;/each&#125;&#125;
+	&lt;/ul&gt;
+</code></pre>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">Simple Logic</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">you can do some simple logic to check if a variable exists (or has value). if you would like to do more complex
+      logic, check out [if_either], [in_array], [is]</p>
+
+
+    <div class="cf">
+      <div class="fl w-50 pr3">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">php</p>
+        
+<pre><code class="language-php">
+	$app->get('/logic-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'data' => array(
+	      'fish' => 'salmon',
+	      'dish' => 'paella',
+	    )
+	  ));
+	});
+</code></pre>
+
+      </div>
+
+
+      <div class="fl w-50">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">hbs (if/else, unless, (normal hbars logic, link to hbars docs) maybe is & link to helpers)</p>
+
+        
+<pre><code class="language-handlebars">
+	&#123;&#123;#if fish&#125;&#125;
+	 Salmon is available
+	&#123;&#123;else&#125;&#125; // this won't show:
+	 No salmon for you.
+	&#123;&#123;/if&#125;&#125;
+	
+	&#123;&#123;#unless snacks&#125;&#125;
+	 No snacks available. We have &#123;&#123;dish&#125;&#125, though.
+	&#123;&#123;else&#125;&#125; // this won't show:
+	 Look at all the snack options:
+	 &#123;&#123;#each snacks&#125;&#125;
+	 - &#123;&#123;this&#125;&#125; &lt;br /&gt;
+	 &#123;&#123;/each&#125;&#125;
+	&#123;&#123;/unless&#125;&#125;
+</code></pre>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">Partials</div>
+    <!-- fixit copy -->
+    <p class="lh-copy">You can include templates in other templates! That is neat! all your partials need to be in the _partials
+      directory, but you can organize that however you want!</p>
+
+    <div class="cf">
+      <div class="fl w-50 pr3">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">normal php whatever example</p>
+        
+<pre><code class="language-php">
+	$app->get('/partials-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'data' => array(
+	      'fish' => 'salmon',
+	      'dish' => 'paella',
+	      'planet' => 'Nibiru'
+	    )
+	  ));
+	});
+</code></pre>
+
+      </div>
+
+
+      <div class="fl w-50">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">hbs</p>
+
+        
+<pre><code class="language-handlebars">
+	&lt;h2&gt;Demo page (rendered with partial from separate template)&lt;/h2&gt;
+	
+	&lt;h3&gt;Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
+	&lt;h3&gt;Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
+	
+	&#123;&#123;&gt; planets-partial&#125;&#125;
+</code></pre>
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">hbs (partial code) (see how it has access to the same data?)</p>
+
+        
+<pre><code class="language-handlebars">
+	&lt;ul&gt;
+	  &#123;&#123;#each planets&#125;&#125;
+	  &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
+	  &#123;&#123;/each&#125;&#125;
+	&lt;/ul&gt;
+</code></pre>
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">Global Layouts</div>
+    <!-- fixit copy -->
+    <p class="lh-copy">if you want to use a global header footer, you can! you can define as many global wrappers/layouts as you
+      want (like express, django, ember, whatever...wow!) if you leave the "layout" parameter blank, STEREO will use the
+      layout in ./pages/_layouts/base.hbs by default. your content will be rendered where the [[outlet]] part is</p>
+
+
+
+    <!-- 				fixit copy, code comments -->
+    <p class="lh-copy">php example</p>
+    
+<pre><code class="language-php">
+	$app->get('/layouts-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'title' => 'Site Title Whatever',
+	    'layout' => 'admin',  // false for nothing, base by default
+	    'data' => array(
+	      'fish' => 'salmon',
+	      'dish' => 'paella',
+	      'planets' => array(
+	        'Mercury', 'Venus', 'Earth', 'Nibiru'
+	      )
+	    )
+	  ));
+	});
+</code></pre>
+
+
+    <!-- 				fixit copy, code comments -->
+    <p class="lh-copy">hbs (wrapper)</p>
+
+    
+<pre><code class="language-handlebars">
+	&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+	&lt;head&gt;
+	  &lt;title&gt;&#123;&#123;title&#125;&#125;&lt;/title&gt;
+	  &lt;meta charset="utf-8" /&gt;
+	  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" /&gt;
+	  &lt;link rel="stylesheet" href="/css/app.css" /&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	
+	  &lt;div class="header"&gt;&lt;h1&gt;Site Title Whatever&lt;/h1&gt;&lt;/div&gt;
+	
+	  &lt;div class="container"&gt;
+	    [[outlet]]  // this is where the content will be rendered
+	  &lt;/div&gt;
+	
+	  &lt;div class="footer"&gt;(c) &#123;&#123;year&#125;&#125; -- All rights reserved or whatever.&lt;/div&gt;
+	
+	&lt;script src="/js/vendor/jquery.min.js"&gt;&lt;/script&gt;
+	&lt;script src="/js/app.js"&gt;&lt;/script&gt;
+	
+	&lt;/body&gt;
+	&lt;/html&gt;
+</code></pre>
+
+
+    <!-- 				fixit copy, code comments -->
+    <p class="lh-copy">hbs</p>
+    
+<pre><code class="language-handlebars">
+	&lt;h2&gt;Demo page (rendered with global wrapper)&lt;/h2&gt;
+	
+	&lt;h3&gt;Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
+	&lt;h3&gt;Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
+	
+	&lt;ul&gt;
+	  &#123;&#123;#each planets&#125;&#125;
+	  &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
+	  &#123;&#123;/each&#125;&#125;
+	&lt;/ul&gt;
+</code></pre>
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">Template Locals (Global Variables)</div>
+    <!-- fixit copy -->
+    <p class="lh-copy">need to make an arbitrary variable/array available to all the templates? use $GLOBALS['locals'] (hold for
+      laugh)
+      but seriously, folks, treat it like an array and whatever you need. and if it's an array is something you can
+      iterate over. and, of course, all of this is available to the application as $GLOBALS['locals']['numbers'] or
+      whatever</p>
+
+    <div class="cf">
+      <div class="fl w-50 pr3">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">php example</p>
+        
+<pre><code class="language-php">
+	$GLOBALS['locals']['eat_this'] = "breakfast";
+</code></pre>
+      </div>
+
+
+      <div class="fl w-50">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">hbs</p>
+        
+<pre><code class="language-handlebars">
+	Let's have &#123;&#123;locals.eat_this&#125;&#125; for dinner.
+</code></pre>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="cf">
+      <div class="fl w-50 pr3">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">php example</p>
+        
+<pre><code class="language-php">
+	$GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');
+</code></pre>
+
+      </div>
+
+
+      <div class="fl w-50">
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">hbs</p>
+        
+<pre><code class="language-handlebars">
+	&lt;ul&gt;
+	  &#123;&#123;#each locals.colors&#125;&#125;
+	  &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
+	  &#123;&#123;/each&#125;&#125;
+	&lt;/ul&gt;
+</code></pre>
+
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <section class="mb5 pt4" id="handlebars-helpers" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">HANDLEBARS HELPERS</div>
+    <!-- 		fixit copy -->
+    <div class="mb3 black-50 lh-copy">You can use handlebars helpers to transform any of your handlebars variables.
+      STEREO includes a handful of common php functions as helpers plus a few special ones. you can write your own, too!
+      it's super easy!</div>
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">lowercase</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">transform string to lowercase (link to php docs)</p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;lowercase hbar_variable&#125;&#125;
+	// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "don't fear the reaper"
+</code></pre>
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">addslashes</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">escape quotes (link to php docs)</p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;addshlashes hbar_variable&#125;&#125;
+	// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "Don\'t Fear The Reaper"
+</code></pre>
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">nl2br</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">note u gotta use 3 curly braces w/ this because it turns plain text to html just F Y I// nl2br
+      // transform line breaks to "br /" ()link to php docs</p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;&#123;nl2br hbar_variable&#125;&#125;&#125;
+	/* 
+	&nbsp;&nbsp; "Don't Fear
+	The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
+	*/
+</code></pre>
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">to_fixed</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">to_fixed - return given number calculated to given number of decimal places (defaults to 2)
+    </p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;to_fixed hbar_variable&#125;&#125; &nbsp;&nbsp; // 3.14
+	&#123;&#123;to_fixed hbar_variable 4&#125;&#125; &nbsp;// 3.1415
+	&#123;&#123;to_fixed hbar_variable 0&#125;&#125; &nbsp;// 3
+</code></pre>
+
+
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">date</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">parse unix timestamp into human-readable date format (basically php's date()). use "now" for current
+      date/time
+    </p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;date hbar_variable "m/d/Y"&#125;&#125; &nbsp;// "1459036800" &nbsp; ---> &nbsp; "3/27/2015"
+	&#123;&#123;date "now" "m/d/Y"&#125;&#125; &nbsp;// "{{date "now" "m/d/Y"}}"
+</code></pre>
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">date_transform</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">transform time/date format (same as date, but it turns a string [like a js date object] into unix time
+      first)
+    </p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;date_transform hbar_variable "m/d/Y"&#125;&#125; &nbsp;// "Sun Aug 14 2016 00:00:00 +0000" &nbsp; ---> &nbsp; "8/14/2016"
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">in_array</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">in_array -- return true(/false) if this item is(/is not) in the array -- can be a csv string, too</p>
+    
+<pre><code class="language-handlebars">
+	/*
+	  colors_array = ['red', 'salmon', 'lilac', 'azul']
+	                    -- or --
+	  colors_array = "red, salmon, lilac, azul"
+	*/
+	
+	&#123;&#123;#in_array "green" colors_array &#125;&#125; 
+	 it's in the array!
+	&#123;&#123;else&#125;&#125; 
+	 it's not in :(
+	&#123;&#123;/in_array&#125;&#125;		
+</code></pre>
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">if_either</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">if_either - return true if the first thing equals either the second or third thing (they could also be hbar_variables)</p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;#if_either hbar_variable "salmon" "azul"&#125;&#125;
+	 it's true :)
+	&#123;&#123;else&#125;&#125;
+	 it's false :(
+	&#123;&#123;/if_either&#125;&#125;
+</code></pre>
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">is</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">this one has a lot of cool options // is
+      // basic comparison operators
+      you can compare either hbars variables or strings (and use arrays, in some cases)
+      acceptable operators: ==, ===, not, !=, <,>, <=,>=, in, typeof</p>
+
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;#is hbar_variable "==" "paella"&#125;&#125;
+	 yes :)
+	&#123;&#123;else&#125;&#125;
+	 no :(
+	&#123;&#123;/is&#125;&#125;
+</code></pre>
+
+    <!-- fixit copy -->
+    <p class="lh-copy">// will also show if the first thing is contained within the second thing (even it's CSV) (2nd thing can be a
+      string, csv list, or an array)
+      // 2nd param can beither array or csv</p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;#is hbar_variable_1 "in" hbar_variable_2&#125;&#125;
+	 yes :)
+	&#123;&#123;else&#125;&#125;
+	 no :(
+	&#123;&#123;/is&#125;&#125;
+</code></pre>
+    <!-- fixit copy -->
+    <p class="lh-copy">// you can also compare variables by types (array, string, integer, etc) (uses <a
+        href="http://php.net/manual/es/function.gettype.php">php gettype</a></p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;#is hbar_variable_1 "typeof" hbar_variable_2&#125;&#125;
+	 yes :)
+	&#123;&#123;else&#125;&#125;
+	 no :(
+	&#123;&#123;/is&#125;&#125;
+</code></pre>
+
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">Custom Helpers</div>
+    <!-- fixit copy -->
+    <p class="lh-copy">it's easy, just write a php function and put it in ./controllers/_global.php and then use it in whatever
+      template. look! (you can copy this code as a good starting point). here's a simple example combining a couple
+      simple native php functions. take a look at the handlebars-helpers file to see more examples of how we put
+      together the more complex helpers (we got a lot of these from somewhere, anyone remember where?)</p>
+
+    <p class="lh-copy">php example</p>
+
+    
+<pre><code class="language-php">
+	$engine->addHelper('lowercase_slashes', function($template, $context, $args, $source) {
+	  $parsed_args = $template->parseArguments($args);
+	  return lowercase(addslashes($context->get($parsed_args[0])));
+	});
+</code></pre>
+
+    <!-- 				fixit copy -->
+    <p class="lh-copy">corresponding hbs (wrapper)</p>
+    
+<pre><code class="language-handlebars">
+	&#123;&#123;lowercase_slashes hbar_variable&#125;&#125;
+	// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "don\'t fear the reaper"
+</code></pre>
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <section class="mb5 pt4" id="requests" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">HTTP REQUESTS</div>
+    <!-- fixit copy -->
+    <div class="mb3 black-50 lh-copy">something something it's trivially easy to work with other systems if you use
+      an api! look how easy it is to consume 3rd-party services
+      - a lot of times you might have a need to integrate things you've made with other systems. fortunately, everyone
+      can consume/produce json apis and this is perfect.</div>
+
+
+
+    <div class="pt3 fw7 f3 mb2">http_request ($url, $data)</div>
+    <!-- fixit copy -->
+    <p class="lh-copy">Make an http request to a given url (using curl), send data, return the raw response.</p>
+
+    
+<pre><code class="language-php">
+	$data = $GLOBALS['app']->http_request('https://external-api.com/v3/example-response', array(
+	  'user_id' => 581146,
+	  'api_key' => '696719xvckvzxspigh24y1e-b'
+	));
+</code></pre>
+
+    
+	if you need to make a json/http request a GET request instead of post, do this:
+<!--
+	$wx_data = $GLOBALS['app']->json_request_debug('http://exec-sign.mainstreetbusinessdistrict.com/uploads/streams.json', array(
+		'something' => 'whatever'
+	)[OR false], array('type' => 'GET'));
+-->
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">json_request ($url, $data)</div>
+    <!-- fixit copy -->
+    <p class="lh-copy">Make an http request to a given url, send data, and return an array of response data (expects response in json
+      format...like the kind sent from render_json). (append _debug to just make an http request and see the raw result)
+    </p>
+
+    
+<pre><code class="language-php">
+	$data = $GLOBALS['app']->json_request('https://external-api.com/v3/example-response', array(
+	  'user_id' => 581146,
+	  'api_key' => '696719xvckvzxspigh24y1e-b'
+	));
+	
+	/* expected response: 
+	  {
+	    first_name: "Eddie",
+	    last_name: "Mercury",
+	    favorite_fish: "Salmon"
+	  }
+	*/
+	
+	print_r($data);
+	
+	/* 
+	  array(
+	    'first_name' => 'Eddie',
+	    'last_name' => 'Mercury',
+	    'favorite_fish' => 'Salmon'
+	  );
+	*/
+</code></pre>
+
+
+    <div class="pt3 fw7 f3 mb2">api_request ($url, $data)</div>
+    <!-- fixit copy -->
+    <p class="lh-copy">Make a json request to a given url, send hard-coded data from cookies <i>(user_id, auth_token, admin_token,
+        moderator_token)</i>. Specialized for use with STEREO patterns/components <i>(coming soon)</i> -- // same as
+      json_request, but in addition to data params, this sends the user_id, auth_token, admin_token, moderator_token set
+      in cookies as those params, uses the $GLOBALS['api_root'] in settings. you can set extra variables to send (like
+      if your api requires a key or whatever...see stereo-core.php, the function called "api_request" obv) (append
+      _debug to just make an http request and see the raw result)</p>
+    
+<pre><code class="language-php">
+	$data = $GLOBALS['app']->api_request('/admin/events/screen', array(
+	  'parameter_1' => 'cool stuff',
+	  'parameter_2' => 'cooler stuff'
+	));
+	
+	/* data sent to api would look something like:
+	  {
+	    user_id: "581146",
+	    admin_token: "123123-1230973t2097sdv",
+	    auth_token: "1203920rdvslasphwg",
+	    moderator_token: false,
+	    parameter_1: "cool stuff",
+	    parameter_2: "cooler stuff"
+	  }
+	*/
+	
+	/* expected response: 
+	  {
+	    first_name: "Eddie",
+	    last_name: "Mercury",
+	    favorite_fish: "Salmon"
+	  }
+	*/
+	
+	print_r($data);
+	
+	/* 
+	  array(
+	    'first_name' => 'Eddie',
+	    'last_name' => 'Mercury',
+	    'favorite_fish' => 'Salmon'
+	  );
+	*/
+</code></pre>
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="mb5 pt4" id="cookies" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">COOKIES</div>
+    <!-- 		fixit copy -->
+
+
+    <div class="pt3 fw7 f3 mb2">cookie_set ($key, $value, $expiration_date)</div>
+    <p class="lh-copy">Set a cookie for a given amount of time.</p>
+    
+<pre><code class="language-php">
+	$GLOBALS['app']->cookie_set(
+	  'user_name',
+	  'Buzz',  // can be a string or an array or whatever
+	  1461619625  // optional, in unix time format, default is time() + 31536000000
+	);
+</code></pre>
+
+
+    <div class="pt3 fw7 f3 mb2">cookie_get ($key)</div>
+    <p class="lh-copy">Return the value of a given cookie.</p>
+    
+<pre><code class="language-php">
+	echo $GLOBALS['app']->cookie_get('user_name');  // Buzz
+</code></pre>
+
+
+    <div class="pt3 fw7 f3 mb2">cookie_delete ($key)</div>
+    <p class="lh-copy">Delete a given cookie.</p>
+    
+<pre><code class="language-php">
+	$GLOBALS['app']->cookie_delete('user_name');
+</code></pre>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="mb5 pt4" id="data" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">DATA</div>
+    <!-- 		fixit copy -->
+    <div class="mb3 black-50 lh-copy">(something mysql crud functionality, requires pdo (php 5.3+), global
+      functions, not part of the $app class, so use it however it suits you)</div>
+
+
+    <div class="pt3 fw7 f3 mb2">db_insert ($table, $input)</div>
+    <p class="lh-copy">Sanitize parameters and insert array of data into database. Returns the id of the record created.</p>
+    
+<pre><code class="language-php">
+	$new_id = db_insert("celestial_bodies", array(
+	  'name' => 'Luna',
+	  'classification' => 'moon',
+	  'comment' => 'Earth\'s moon, also commonly referred to as "the moon"'
+	));
+
+	echo $new_id;
+</code></pre>
+
+
+
+    <div class="pt3 fw7 f3 mb2">db_find ($table, $criteria, $options)</div>
+    <!-- 		fixit copy -->
+    <p class="lh-copy">Sanitize parameters and retrieve data from database. (SELECT *) <br />Returns an array with the the data and a
+      total number of results.</p>
+    
+<pre><code class="language-php">
+	$planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title ASC LIMIT 8");
+	
+	foreach ($planets['data'] as $p){
+	  echo $p['title'];
+	  echo $p['classification'];
+	  // etc, etc
+	}
+	
+	echo $planets['total'];  // 8
+</code></pre>
+
+    <p class="lh-copy">You can run a raw query (if you need to do joins or anything fancy)</p>
+    
+<pre><code class="language-php">
+	$space_objects = db_find("", "SELECT title, classification FROM celestial_bodies WHERE id IS NOT NULL", array(
+	  'raw' => true
+	));
+</code></pre>
+
+    <p class="lh-copy">If APC is enabled on your system, you can cache your queries</p>
+    
+<pre><code class="language-php">
+	$planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title ASC", array(
+	  'cache' => true,
+	  'cache_length' => 120  // optional, in seconds, default is 60
+	));
+</code></pre>
+
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">db_update ($table, $input, $criteria)</div>
+    <p class="lh-copy">Sanitize parameters and update a database record.</p>
+    
+<pre><code class="language-php">
+	db_update("celestial_bodies", array(
+	  'name' => 'Mars',
+	  'comment' => 'Research "The Phobos Incident" -- we are not alone'
+	), "name='Marz'");
+</code></pre>
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">db_delete ($table, $criteria)</div>
+    <p class="lh-copy">Sanitize parameters and delete a given database record.</p>
+    
+<pre><code class="language-php">
+	db_delete("celestial_bodies", "name='venice'");
+</code></pre>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="mb5 pt4" id="misc" >
+
+		<div class="bt bw3 mb2"></div>
+
+    <div class="f2 fw7 mb3">MISC HELPER FUNCTIONS</div>
+    <!-- fixit copy -->
+
+
+    <div class="pt3 fw7 f3 mb2">email_send ($options)</div>
+    <p class="lh-copy">Send an plain text or html email (with mailgun api, if available, otherwise using php mail).</p>
+    
+<pre><code class="language-php">
+	$GLOBALS['app']->email_send(array(
+	  'to' => 'static@hexgirlfriend.com',
+	  'from' => 'sitemeister@partyphysics.com',
+	  'cc' => 'cc-address@partyphysics.com',  // optional
+	  'bcc' => 'bcc-address@partyphysics.com',  // optional
+	  'reply-to' => 'reply-address@partyphysics.com',  // optional
+	  'subject' => 'Send me an email',
+	  'html' => true,  // optional, message will be sent as plain text unless this is true
+	  'message' => 'Right now...&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;RIGHT NOW&lt;/u&gt;&lt;/b&gt;'
+	));
+</code></pre>
+    
+
+update docs: NOW YOU CAN USE TEMPLATES TO MAKE HTML EMAILS!
+
+<pre><code class="language-php">
+	$GLOBALS['app']->email_send(array(
+		'from' => 'static@hexgirlfriend.com',
+		'to' => 'jonathan.youngblood@gmail.com',
+	
+		'template' => 'mail/test',
+		'layout' => 'mail',
+	// 	'preview' => true,
+	// 	'debug' => true,
+		'data' => array(
+			'email' => 'jonathan.youngblood@gmail.com'
+		),
+	
+	));
+</code></pre>
+
+
+
+
+    <div class="pt3 fw7 f3 mb2">client_ip ()</div>
+    <p class="lh-copy">Return the address of the computer making the current request.</p>
+    
+<pre><code class="language-php">
+	echo $GLOBALS['app']->client_ip();
+</code></pre>
+<p class="lh-copy">
+    		fixit disclaimer about ip addresses and accuracy (we use a couple of redundant methods, but you can't really trust them in general because of the nature of how ip addresses work...easily spoofable, etc)
+</p>
+
+
+
+
+
+<p class="lh-copy">
+
+  more of these:
+
+  url_slug
+  url_strip
+  url_validate
+  mysql_date
+  video_id
+  br2nl
+  pagination_query
+  pagination_links
+</p>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <!-- fixit all of this -->
+
+  <section class="mb5 pt4" id="advanced" >
+
+		<div class="bt bw3 mb2"></div>
+
+		<div class="f2 fw7 mb3">ADVANCED</div>
+
+<p class="lh-copy">
+- how to work w/ nginx
+
+
+link to patterns/components repo
+- examples of how to do various kinds of things
+	- copy/paste code samples
+		- routing
+		- crud operations
+		- etc
+
+	- working w/ compose
+
+
+
+pattern lib reqs
+	[- phmagick (imagemagick)
+	[- s3 upload (what's it called?)
+	[- smoke
+	[- dropzone
+	[- fancybox
+	[- mailgun
+
+
+setting max file size (w/ htaccess / php)
+	upload_max_filesize = 20M
+	post_max_size = 20M
+</p>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+		<footer class="tr cf pv3">
+<!-- 			⋰⋱⋰⋱⋰  ⟞  ⦛ ⦝ ⦤ ⦥ ⧉ ⧥ 	⧷ ⨬ ⨳ ⩸ ▨ ◯ ◉ ◎ 𐌆 ﹌ -->
+<!-- 				<div class="fr pl2" style="font-size: 2.35rem;">▨</div> -->
+<!-- f1 fr pl2 -->
+<!-- 				<div class="f5 mb2">⋰⋱⋰⋱⋰</div> -->
+<!-- style="padding-top: 0.75rem;" -->
+				<div class="f1"><a class="black no-underline" href="https://hxgf.io/">⧉</a></div>
+				<div class="f7 lh-copy" >
+          <!-- fixit year -->
+			&copy; 2022 <a class="black" href="https://hxgf.io/">HXGF</a><br />
+(CC) <a class="black" href="https://creativecommons.org/licenses/by-sa/3.0/us/">BY-SA 3.0</a>
+				</div>
+		</footer>
+	
+	
+  <div class="tc pv3">
+    <a target="_blank" href="https://hxgf.io"><img class="w3 dib" src="./images/hxgf-bug.png" /></a><br />
+    <a target="_blank" class="f6 black" href="https://github.com/hxgf/darkwave.ltd">src</a>
+  </div>
+
+
+	</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	if (window.location.hash){
+		document.getElementById(window.location.hash.replace('#','')).scrollIntoView();	
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</body>
+</html>
