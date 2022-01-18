@@ -1,3 +1,4 @@
+/* CUSTOMIZED THEME BASED ON */
 /* PrismJS 1.20.0
 https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+apacheconf+handlebars+markup-templating+nginx+php+sql&plugins=normalize-whitespace+toolbar+copy-to-clipboard */
 /**
@@ -5,6 +6,9 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
  * @author ocodia
  */
+
+
+
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -40,7 +44,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #272822;
+	background: rgba(0,0,0,0.9);
 }
 
 /* Inline code */

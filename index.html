@@ -18,39 +18,56 @@
   <!-- <script src="./js/lib/instant.page.min.js"></script> -->
   <!-- <script src="https://cdn.skypack.dev/@hotwired/turbo"></script> -->
 
-</head>
-<body class="h-100 sans-serif">
 
 
+<!-- sans-serif -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet"> -->
+
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400&display=swap" rel="stylesheet"> -->
+
+<!-- *** -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@200;300&display=swap" rel="stylesheet"> -->
 
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap');
+  /* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400;600&display=swap'); */
 
   body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    /* font-family: 'IBM Plex Sans', sans-serif; */
+    /* font-family: 'Roboto Mono', monospace; */
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    /* font-family: 'Archivo', sans-serif; */
+    /* font-family: 'Trispace', sans-serif; */
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  }
+
+  .inconsolata {
+    font-family: 'Inconsolata', monospace;
   }
 
   .sys-blue {
     color: blue;
   }
+
+  .bg-black-95 {
+    background: rgba(0, 0, 0, 0.95);
+  }
+
+  .black-95 {
+    color: rgba(0, 0, 0, 0.95);
+  }
+
+  .normal {}
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- custom version of prism: https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+apacheconf+handlebars+markup-templating+nginx+php+sql&plugins=normalize-whitespace+toolbar+copy-to-clipboard -->
 
 <link rel="stylesheet" href="./css/prism.stereo.css" />
@@ -61,94 +78,51 @@
 <!-- <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"> -->
 
 <style>
+  pre[class*="language-"] {
+    border-radius: 0;
+  }
 
-	pre[class*="language-"] {
-		border-radius: 0;
-	}
+  code[class*="language-"],
+  pre[class*="language-"] {
+    /* 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
+    font-family: 'Fira Code', monospace;
+    /* 		font-family: 'IBM Plex Mono', monospace; */
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
 
-	code[class*="language-"],
-	pre[class*="language-"] {
-	/* 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
-		font-family: 'Fira Code', monospace;
-/* 		font-family: 'IBM Plex Mono', monospace; */
-		font-size: 0.9rem;
-		line-height: 1.55;
-		margin-bottom: 1.5rem;
-	}
-	.fira{
-		font-family: 'Fira Code', monospace;
-	}
-	
-	.f7{
-	  font-size: .675rem;
-	}
-	
-	.sidebar-nav a:hover{
-		text-decoration: underline;
-	}
+  .fira {
+    font-family: 'Fira Code', monospace;
+  }
 
-	@media screen and (min-width: 48em){
-		.content-frame{
-			margin-left: 20%;
-		}	
-	}
+  .f7 {
+    font-size: .675rem;
+  }
 
-	.hover-o-50:hover{
-		opacity: 0.3;
-	}
+  .sidebar-nav a:hover {
+    text-decoration: underline;
+  }
 
+  a.hover-underline:hover,
+  a.hover-underline:hover span {
+    text-decoration: underline;
+  }
 
+  @media screen and (min-width: 48em) {
+    .content-frame {
+      margin-left: 20%;
+    }
+  }
+
+  .hover-o-50:hover {
+    opacity: 0.3;
+  }
 </style>
 
 
-
-
-	<div class="w-20-ns w-100 pa3 h-100-ns overflow-auto-ns fixed-ns top-0 left-0">
-
-		<div class="flex mb2 pl1">
-
-			<a href="/" class="black no-underline"><img src="./images/stereo-headphones-black-big.png" class="" style="height: 2.55rem;" /></a>
-			<div class="ml2 pl1 pt1 lh-title">
-				<div class="f5 fw7"><a class="black no-underline" href="/">STEREO</a></div>
-				<div class="f6">INTERNET TOOLKIT</div>
-			</div>			
-
-
-		</div>
-
-
-
-		<div class="bw2 bt b--black mb3"></div>
-
-
-		<div class="flex flex-wrap mb2">
-			<div class="w-50 pr1 mb2">
-<a href="/#ethos" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Ethos</a>
-			</div>
-
-			<div class="w-50 pl1 mb2">
-<a href="/#ethos" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Support</a>
-			</div>
-
-
-			<div class="w-50 pr1 mb2">
-<a href="https://github.com/hxgf/stereo" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Source</a>
-			</div>
-			
-			<div class="w-50 pl1 mb2">
-<a href="https://www.craft.do/s/uCvRW8Z1dVLZaq" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Roadmap</a>
-			</div>
-
-
-			<div class="w-50 pr1 mb2">
-<a href="https://github.com/hxgf/stereo/issues" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Issues</a>			
-			</div>
-			
-			<div class="w-50 pl1 mb2">
-<a href="https://github.com/hxgf/stereo/releases" class="db tc pa2 fw6 no-underline f6 white bg-black hover-bg-black-30">Changelog</a>			
-			</div>
-
-		</div>
+</head>
+<body class="h-100 black-80" style="background: #f0f0f0;">
 
 
 
@@ -157,65 +131,78 @@
 
 
 
-		<div class="bw2 bt b--black mb2"></div>
 
 
-		<div class="f6 fw5 mb2 lh-title tc"><a href="/" class="black no-underline">DOCUMENTATION &mdash; v1.4.0</a></div>
 
 
-		<div class="bw2 bt b--black mb3"></div>
 
-<!-- 		sidebar menu -->
 
-<!-- {{!-- fixit highlight currently-focused section of documentation -- stereo docs - keep track of current page/nav location w/ intersection observer -- --}} -->
-<!-- {{!-- https://css-tricks.com/table-of-contents-with-intersectionobserver/ --}} -->
+
+
+<!-- 
+
+	<div class="w-20-ns w-100 pa3 h-100-ns overflow-auto-ns fixed-ns top-0 left-0 white-90 bg-black-95 inconsolata">
+
+
+		<div class="bw2 bt b--white-80 mb2"></div>
+
+
+		<div class="f5 fw5 mb2 lh-title tc"><a href="https://github.com/hxgf/stereo" target="_blank" class="white-90 no-underline hover-underline">STEREO TK &mdash; v1.4.0</a></div>
+
+
+		<div class="bw2 bt b--white-80 mb3"></div>
+
 
 		<div class="sidebar-nav">
 
+      <div class="mb2">
+        <a href="/#intro" class="white no-underline fw7 f6">Introduction</a>
+      </div>
+
 			<div class="mb2">
-	      <a href="/#installation" class="black no-underline fw7 f6">Installation / Setup</a>			
+	      <a href="/#installation" class="white no-underline fw7 f6">Installation / Setup</a>			
 			</div>
 			<div class="mb2">
-	      <a href="/#routing" class="black no-underline fw7 f6">URL Routing</a>
+	      <a href="/#routing" class="white no-underline fw7 f6">URL Routing</a>
 			</div>
 	      <div class="pl1 f7">
-		      <a href="/#routing-http-verbs" class="black no-underline dib mb2 lh-title">Routing with HTTP verbs</a><br />
-		      <a href="/#routing-any-all" class="black no-underline dib mb2 lh-title">Accepting any/all matching HTTP requests</a>
+		      <a href="/#routing-http-verbs" class="white no-underline dib mb2 lh-title">Routing with HTTP verbs</a><br />
+		      <a href="/#routing-any-all" class="white no-underline dib mb2 lh-title">Accepting any/all matching HTTP requests</a>
 	      </div>
 
 			<div class="mb2">
-	      <a href="/#rendering" class="black no-underline fw7 f6">Rendering Content</a>
+	      <a href="/#rendering" class="white no-underline fw7 f6">Rendering Content</a>
 			</div>
 			<div class="mb2">
-	      <a href="/#templates" class="black no-underline fw7 f6">Templates</a>
+	      <a href="/#templates" class="white no-underline fw7 f6">Templates</a>
 			</div>
 			<div class="mb2">
-	      <a href="/#handlebars-helpers" class="black no-underline fw7 f6">Handlebars Helpers</a>
+	      <a href="/#handlebars-helpers" class="white no-underline fw7 f6">Handlebars Helpers</a>
 			</div>
 			<div class="mb2">
-	      <a href="/#requests" class="black no-underline fw7 f6">HTTP Requests</a>
+	      <a href="/#requests" class="white no-underline fw7 f6">HTTP Requests</a>
 			</div>
 			<div class="mb2">
-	      <a href="/#cookies" class="black no-underline fw7 f6">Cookies</a>
+	      <a href="/#cookies" class="white no-underline fw7 f6">Cookies</a>
 			</div>
 			<div class="mb2">
-	      <a href="/#data" class="black no-underline fw7 f6">Data</a>
+	      <a href="/#data" class="white no-underline fw7 f6">Data</a>
 			</div>
 			<div class="mb2">
-	      <a href="/#misc" class="black no-underline fw7 f6">Misc Helpers</a>
+	      <a href="/#misc" class="white no-underline fw7 f6">Misc Helpers</a>
 			</div>
 
 			<div class="mb2">
-	      <a href="/#advanced" class="black no-underline fw7 f6">Advanced</a>
+	      <a href="/#advanced" class="white no-underline fw7 f6">Advanced</a>
 			</div>
 
 		</div>
 
-	</div>
+	</div> -->
 	
-
-	<div class="content-frame w-80-ns w-100 h-100">
-	<div class="h-100 pa3 pl0-ns">
+<!-- content-frame w-80-ns -->
+	<div class="  w-100 h-100">
+	<div class="h-100 ph4-ns ph3">
 
 
 
@@ -225,17 +212,98 @@
 <!-- {{!-- palegreen --}} -->
 <!-- {{!-- peachpuff --}} -->
 
-  <section id="home" class="h-100 relative" style="background: palegreen;">
 
+
+
+  <section id="home" class="h-100 relative">
+ 
     
 
 		<div class="dt h-100 center">
 		  <div class="dtc h-100 v-mid tc">
-        <!-- {{welcome_icon}} -->
-        <!-- '⦛','⦝','⦤','⦥','⧥','⧷','⨬','⨳','⩸','▨','◯','◉','◎','𐌆','♥','☼','⁙' -->
-			  <div style="font-size: 15rem;" class="mb4"><a href="https://github.com/hxgf/stereo/archive/refs/tags/1.4.0.zip" class="black no-underline">⁙</a></div>
-				<a href="https://github.com/hxgf/stereo/archive/refs/tags/1.4.0.zip" class="bg-black white pv2 ph3 br2 no-underline hover-underline f6 hover-o-50">&darr;&nbsp; stereo-1.4.0.zip</a>
-		  </div>
+
+
+
+
+
+        <div class="db-ns dn">
+          <div class="flex mb2 tl pb1 sans-serif">
+            <img src="./images/stereo-headphones-black.svg" style="height: 8.45rem;" />
+            <div class="ml3 pl1">
+              <div class="f-subheadline fw7"><a class="black no-underline" href="/">STEREO</a></div>
+              <div style="font-size: 2.5rem;" class="black fw6">INTERNET TOOLKIT</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dn-ns db">
+          <div class="flex items-end mb2 tl pb1 sans-serif" style=" line-height: 1.1;">
+            <img src="./images/stereo-headphones-black.svg" style="height: 5rem;" />
+            <div class="ml2 pl1">
+              <div style="font-size: 2.8rem;" class="fw7"><a class="black no-underline" href="/">STEREO</a></div>
+              <div style="font-size: 1.4rem;" class=" fw7 black">INTERNET TOOLKIT</div>
+            </div>
+          </div>
+        </div>
+
+
+		<div class="bw3 bt b--black-90 mb5"></div>
+
+
+    <div class="lh-title mb5 f5 fw4 black-90 inconsolata">The <i>easiest</i> way to build <span class="dib-ns db">server-rendered web sites.</span></div>
+
+
+    <a href="https://github.com/hxgf/stereo/archive/refs/tags/1.4.0.zip" class="inconsolata dib bg-black-90 white pv2 ph3 br2 no-underline hover-underline f6 ba b--black v-mid">&darr;&nbsp; stereo-1.4.0.zip</a>
+
+    <div class="mt3 o-90">
+      <a target="_blank" href="https://github.com/hxgf/stereo" class="inconsolata dib fw4 no-underline f6 black hover-underline"><img style="height: 1.15rem;" class="dib v-mid" src="./images/icon-github.svg"><span class="dib v-mid ml2">SOURCE</span></a>
+    </div>
+
+<!-- 
+      <a href="https://github.com/hxgf/stereo/archive/refs/tags/1.4.0.zip" class="dib bg-black white pv2 ph2 br2 no-underline hover-underline f5 ba bw1 b--black v-mid fw1"><span class="dib v-mid" style="height: 1.75rem;">&darr;&nbsp; stereo-1.4.0.zip</span></a>
+ -->
+
+
+      <!-- <a target="_blank" href="https://github.com/hxgf/stereo/" class="dib black pv2 ph2 br2 no-underline hover-underline f5 ba bw1 b--black v-mid fw1"><img style="height: 1.75rem;" class="dib v-mid" src="./images/icon-github.svg"><span class="dib v-mid ml2">source</span></a> -->
+
+
+
+
+
+
+<!-- 
+		<div class="flex flex-wrap justify-between items-center">
+
+			<div class="pr1">
+<a href="https://github.com/hxgf/stereo/releases" class="ttu db fw4 no-underline f5 black hover-underline">Changelog</a>
+			</div>
+			      
+			<div class="pr1">
+<a href="https://github.com/hxgf/stereo/issues" class="ttu db fw4 no-underline f5 black hover-underline">Issues</a>			
+			</div>
+			
+			<div class="pl1">
+<a href="https://hxgf.notion.site/STEREO-TK-Public-Roadmap-f48fccd4a07649cba93c1573c187baea" class="ttu db fw4 no-underline f5 black hover-underline">Roadmap</a>
+			</div>
+
+      <div class="pl1">
+<a href="#support" class="ttu db fw4 no-underline f5 black hover-underline">Support</a>
+			</div>
+
+
+		</div> -->
+
+
+
+
+
+
+
+
+
+
+
+      </div>
 		</div>
 
   </section>
@@ -246,57 +314,100 @@
 
 
 
+  <section id="intro" class="mb6">
+
+
+    <div class="mw7 ph4-ns ph2 center  mb6 pb6">
+
+      <div class="f3-ns f4 lh-copy mb6">
+
+        <p>STEREO is a "full stack" tool kit designed to make the process of developing dynamic server-rendered web applications
+        significantly easier and more enjoyable.</p>
+
+        <p>It's built with old boring technology, and will run in any LAMP (shared web hosting) environment with no extra setup required.*</p>
+
+        <p>Spend less time fighting with software and more time enjoying life with your family and friends!</p>
+
+      </div>
+
+      <div class="bw1 ba br2 pa3 bg-white mt5">
+
+        <h2 class="mt0 mb3 pb0 ttu fw7 f2">Core Features</h2>
+
+        <div class="flex flex-wrap f4-l f5 pl2" style="line-height: 2.3;">
+          <ul class="w-50-ns w-100 pl3 mt0 mb0">
+            <li>nice router</li>
+            <li>template rendering</li>
+            <li>organized application structure</li>
+            <li>minimal html boilerplate</li>
+          </ul>
+          <ul class="w-50-ns w-100 pl3 mt0">
+            <li>simple data handlers (mysql crud)</li>
+            <li>misc utility functions (back end)</li>
+            <li>optional utility FE libraries</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
 
 
 
 
-	<section id="intro" class="black-90">
+
+<!-- 
+
+    <div>a few diagrams of what it is and core concepts
+
+<img src="./images/diagram-stack.png" />
+
+    </div>
+
+    <div>more in-depth (couple paragraph) description of the idea behind it and why we need it, who will benefit from it, etc</div> -->
+
+  </section>
+
+
+
+	<section id="intro-fodder" class="black-90 bg-black-05 pa3 mb6 dn">
 
 
 
 
-
-
-<div class="center tc pt6">
-
-
-
-
-*** WORKING ON THE DOCS AS I HAVE TIME ***<br /><br />
-
-(i don't have a lot of time)<br /><br />
-
-
-<br /><br /><br />
-
-
-
-<pre class="fira f7"> ______     ______    ______     ______     ______     ______    
-/\  ___\   /\__  _\  /\  ___\   /\  == \   /\  ___\   /\  __ \   
-\ \___  \  \/_/\ \/  \ \  __\   \ \  __<   \ \  __\   \ \ \/\ \  
- \/\_____\    \ \_\   \ \_____\  \ \_\ \_\  \ \_____\  \ \_____\ 
-  \/_____/     \/_/    \/_____/   \/_/ /_/   \/_____/   \/_____/ </pre>
-    
-<div class="fira pt3 pb4 f7 lh-copy">
-	INTERNET TOOLKIT<br />
-	1.4.0
-</div>
-
-</div>
-
-
-
-<!-- {{!-- fixit --}} -->
-<!-- {{!-- stereo - Kill the “literally the easiest” stuff
-Oxygen is (allegedly) the easiest, diff workflow (& diff use base tbh) --}} -->
-
-
-			<div class="mw7 center mv5 tl lh-copy pa3 f4">
+			<div class="lh-copy f4">
 			Stereo is a "full-stack" framework for building web sites and internet-based applications.<br /><br />
 			
 			It was designed to make the process of developing and maintaining potentially-complex dynamic server-rendered applications as easy as possible.<br /><br />
 			
-			In fact, we like to say it's "literally the easiest way to build web sites"
+brutalist, small, simple architecture -- complexity as needed, but keep it minimal
+
+tool kit for building server-rendered applications with minimal fanfare/effort
+
+
+it's really awesome for building apis for jam stack sites!
+
+a scrappy "can-do" framework for making web apis QUICKLY with minimal effort
+
+Solve YOUR problems without a lot of effort/fanfare)
+
+A pragmatic lamp framework for perfectionists w deadlines (don't sue me django)
+
+Craft web development
+Stereo easiest way to build stuff - lazy web development (the old fashioned way)
+Stereo - web dev doesn’t have to be difficult, you don’t have to be an expert to get started
+
+??
+Lol vintage web development
+Lamp stacks = vhs
+
+
+This tool kit was designed to make it easier to develop internet-based applications that operate in perpetuity with
+minimal technical overhead. Templates are dynamically rendered on the server and delivered as static html. This
+frameworks provides organization for your project and conventions for making technical decisions.
+
+
+
 			<br /><br /><br />
 
 			<div class="f3 mb3 b">Key Features:</div>
@@ -306,7 +417,8 @@ Oxygen is (allegedly) the easiest, diff workflow (& diff use base tbh) --}} -->
 
 					<div class="flex items-start mb2">
 						<span class="fw7 mr1">•</span> <span>Flexible routing system with ~pretty~ urls.</span>
-					</div>
+stuff like "you can design actual rest apis with this (accepts all http verbs)"
+          </div>
 
 					<div class="flex items-start mb2">
 						<span class="fw7 mr1">•</span> <span>Powerful &#123;&#123;handlebars&#125;&#125; templates</span>
@@ -347,15 +459,6 @@ Oxygen is (allegedly) the easiest, diff workflow (& diff use base tbh) --}} -->
 
 
 
-<!-- 
-			{{!-- ETHOS --}}
-			{{!-- brutalist, small, simple architecture --}}
-			{{!-- complexity as needed, but keep it minimal --}}
-
-			{{!-- ROADMAP / FUTURE --}}
-			{{!-- we want to keep this framework simple and evergreen. anything resembling CMS functionality or SDK patterns are going into the darkwave project learn more at darkwave . ltd --}}
-
-			{{!-- CONTRIBUTION --}} -->
 
 
 
@@ -363,17 +466,18 @@ Oxygen is (allegedly) the easiest, diff workflow (& diff use base tbh) --}} -->
 
 
 
-	</section>
 
 
-
-
-
-	<section id="ethos" class="black-90 bg-black-05 pa5 mb6">
 
 
 				<div class="lh-copy mb4 f3 fw7">Build the simplest possible version<br /> and then move on with your life!</div>
 
+Stereo - “starter kit” (not particularly a framework)
+Stereo “full stack” but mostly back end fw - gives you workflow & api for rendering templates & setting up routes, the rest is up to you!
+
+Stereo mfsto - write simple code that is easy to understand —> happy developers, able to hire cheap devs (juniors, expert-level not required), easy to extend/maintain
+
+develop in the cloud! it can be your own cloud (get a vps, it works best w/ vps)
 
 ethos / core concepts (brutalism, simplicity, etc)<br />
 * brutalist in theory/practice, not the kitschy web aesthetic *<br />
@@ -381,10 +485,129 @@ don't build things that impress your colleagues, build something that solves a p
 
 web development doesn't NEED to be complex, you don't have to introduce a shitload of complexity into your application just to get stuff online. it CAN be really easy and simple.<br /><br />
 
+making web sites that do things
+
+
+stereo meta - building the websites the 'stackless' way -
+https://tutorials.yax.com/articles/build-websites-the-yax-way/quicktakes/what-is-the-yax-way.html
+- use as many native apis as possible (you can do A LOT now)
+- no build tools!
+- put your site on a server, edit it from anywhere!
+- we'll help w/ back-end stuff (routing, data, api/cloud integration, etc)
+- it's the web! use the platform! - https://elisehe.in/2021/08/22/using-the-platform
+
+
+Stereo/dw building solutions (back end, data, api, cloud) that are
+Simple
+Small scale
+self hosted
+
+
+<br /><br /><br />
+
 FAQs? support? contribution guidelines?<br />
 -- contributions are welcome, but not guaranteed to be merged into project.<br />
 -- go ahread and submit issues, but i'm not gonna fix your problems. (for free)
 	- pay hxgf (jy) to help w/ support, set up / deploy / consulting
+
+
+<br /><br /><br />
+
+
+
+
+
+Stereo diagrams
+
+- Stack diagram of where it fits in (http routing, template rendering, etc)
+  - Where it sits in the stack on top of php Linux etc) (also noting requirements)
+  - linux - apache - php + mysql
+  - what exactly the pieces are, where they fit in the web dev paradigm
+
+
+- file/application structure
+  - architecture (libraries used, file organization)
+
+- processing model (order of operations, logic performed, etc)
+
+
+<br /><br /><br />
+
+Just write business logic! Don't get lost in the details solving problems that you don't/won't have
+Unnecessary problems, things you shouldn't have to worry about
+
+      <br /><br /><br />
+
+
+great for building apis
+
+- want a ~simple~ api you can drop on a web server and forget about? easy!
+- want a complex api? you can build it!
+    - want a central system that can communicate w/ third-party cloud apis? piece of cake!
+- simple interface, powerful potential (hook the incoming api routes to shell_exec, http_request, etc)
+-- you can be as verbose or terse in your api spec as you want (designing routes w/ http verbs, variables, etc)
+
+
+
+      <br /><br /><br />
+
+
+
+our promise to you
+
+stereo - api that doesn't change [API frozen, new releases will not break your code.]
+- the underlying framework can be updated to accommodate languages/tech changes as the world changes, but we NEED to
+have the guarantee that code you write today will still work 10-20 years from now (and you can update and extend it at
+any time, using the same abstraction methods every time)
+
+
+Stereo - no build systems no masters! - render your site on the server without a complex setup!
+In real time / on the fly / jit
+
+
+      <br /><br /><br />
+
+
+
+
+
+WHY STEREO?
+i like writing simple scripts to do something and moving on with my life
+that's what i like about php/mysql with stereo ... the scripts i write are succint and understandable. no unnecessary ceremony setting things up, can write things quickly and they sit on a web server "just work" "forever"
+and they can hook to other systems via http api (if project requires something more specific/complex...like screen scraping or concurrent image processing, or 3rd party services for sending email or text messages, etc)
+interacting w/ other systems via rss & ical too (easy to write feeds, we've done gfx crawlers, podcast feeds, ical feeds, etc)
+it's a simple system with as little complexity as possible (fewer things to break) ... using oold boring technology that "won't change" and will continue to work like it always has (dependable, reliable)
+
+i've abandoned this framework so many times over the years in favor of something "better" (express, laravel, django, adonis) but i keep coming back to this because i've always been able to do what i needed way faster and easier with old boring shitty php. i've made updates using the conventions/knowledge from visitng other ecosystems
+i ALWAYS come back, this is just a WAY easier way to work without having to learn a ton of complex fw logic (easy for novices/newcomers to pick up)
+
+
+      <br /><br /><br />
+
+
+
+
+stereo ideals - writing code that is
+
+- easy to understand
+- easy to maintain
+- easy to add new feature
+- easy for newcomers (both to the codebase/language, and also to development in general)
+- not likely to randomly break in production (can run on auto-pilot, rugged and reliable, will continue to function indefinitely)
+
+
+      <br /><br /><br />
+
+
+
+concept: a server-side hub for your digital infrastructure
+-- connect to services via http requests (curl runs the web), work with any architecture that has an api (including custom stuff you want to do with other stacks)
+-- but it's connected to your "evergreen" urls that are easy to create/manage, and are deployed with a (proven, battle-tested) technology that won't randomly break (sturdy, reliable)
+
+      <br /><br /><br />
+
+
+      link to related projects - more complex: dw, less complex: scratch
 
 
 	</section>
@@ -602,7 +825,7 @@ outline vision (simplicity / limited scope, intentionally limited, evergreen api
 
 
 Stereo meta - cool to have a front end resources collection, for doing cool stuff w fonts and css, normal stuff you can
-do w front end stuff, don’t need stereo, but very helpful for dev w stereo
+do w front end stuff, don't need stereo, but very helpful for dev w stereo
 Hxgf fe- curated resources (good articles, utility sites, etc)
 
 
@@ -700,10 +923,10 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
 
 
 
-
+<!-- 
 <div class="pa5 bg-black f1 tc white fw7">
 	DOCUMENTATION &mdash; v1.4.0
-</div>
+</div> -->
 
 
 
@@ -718,21 +941,20 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
 
 
 		
-		
-		<p class="lh-copy">
-		
-		
-		[[FIRST PRINCIPLES
-		
-		
-		NEW SECTION - that briefly outlines the impetus for creating the framework, the need it fills, and the ideals/conventions intended to be used for creating apps/sites w/ the framework
-		]]<Br/><br />
-		
-		This tool kit was designed to make it easy to develop internet-based applications that operate in perpetuity with minimal technical overhead. Templates are dynamically rendered on the server and delivered as static html. This frameworks provides organization for your project and conventions for making technical decisions.
-		
-		
-		</p>
 
+
+
+docs
+
+installation - 3 columns
+
+- degit - easiest: npx degit
+- manual - 2nd easiest: git clone
+  - git clone --depth=1 --branch=master https://github.com/hxgf/stereo.git . && rm -rf .git
+- manually download zip & put them on your server or dev env (make sure you copy the .htaccess file...it might be hidden)
+
+
+		
 
 
 
@@ -740,7 +962,7 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
 
     <div class="cf mb3">
 			
-			<div class="fl w-50 pr3">
+			<div class="fl w-50-ns pr3">
 
         <div class="pt3 fw7 f3 mb2">Installation</div>
 
@@ -754,7 +976,7 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
 
 			</div>
 
-			<div class="fl w-50 pr3">
+			<div class="fl w-50-ns pr3">
 
         <div class="pt3 fw7 f3 mb2">Server Requirements</div>
 
@@ -768,6 +990,13 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
 					- imagemagick (if messing with images)
 					- apc (if you want to use db caching)
 					</li>
+
+
+requirements
+php/mysql/apache versions?
+note any required php settings/flags (for like file_get_contents)
+also apache options (that are usually enabled by default like mod_rewrite or whatever)
+install setup guide w/ recommended default settings (upload/body max filesize etc)
 
 			</div>
 
@@ -805,6 +1034,11 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
 		<div class="pt3 fw7 f3 mb2">Included libraries</div>
 
 		<p class="lh-copy">
+      back end<br />
+      - alto<br />
+      - hbars lightncandy<br />
+      - imagemagic?<br />
+      - ?? i forget what else
 <!--
 		- https://github.com/XaminProject/handlebars.php
 			- find more helpers here:
@@ -816,11 +1050,12 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
 		</p>
 
 		<p class="lh-copy">
-		FRONT END STUFF (you can easily comment this out if you don't want it, but it's super handy if you're doing stuff from scratch)
-			- tachyons
-				- http://www.tachyons.io/
-			- jquery (& cookie)
-			- normalize
+		FRONT END STUFF <br />(you can easily comment this out if you don't want it, but it's super handy if you're doing stuff from scratch)
+			- tachyons<br />
+				- http://www.tachyons.io/><br />
+			- jquery (& cookie)<br />
+      - instant page<br />
+      - same stuff as scratch (alpine, tailwind, turbo, pico)
 		</p>
 
   </section>
@@ -857,7 +1092,7 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
 
     <div class="pt3 fw7 f3 mb2" id="routing-http-verbs">Routing with HTTP verbs</div>
     <!-- 		fixit copy -->
-    <p class="lh-copy">You can accept any type of http request and do things with them (really cool if you want to make an actual rest
+    <p class="lh-copy">BUILD YOU A REST API - You can accept any type of http request and do things with them (really cool if you want to make an actual rest
       api with http verbs) (all current http verbs are supported, so you can get as specific as you want)</p>
 
 <pre><code class="language-php">
@@ -1627,6 +1862,8 @@ stereo docs - if you jive with the ethos of this fw and this workflow for develo
     <!-- 		fixit copy -->
     <p class="lh-copy">in_array -- return true(/false) if this item is(/is not) in the array -- can be a csv string, too</p>
     
+** this is currently broken and i don't know why <span class="bg-black-10">¯\_(ツ)_/¯</span>
+
 <pre><code class="language-handlebars">
 	/*
 	  colors_array = ['red', 'salmon', 'lilac', 'azul']
