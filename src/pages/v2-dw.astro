@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="h-100">
+  <head>
+    <title>STEREO - Internet Toolkit</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.css"
+    />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://unpkg.com/alpinejs" defer></script> -->
+    <!-- <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous" defer></script> -->
+
+    <!-- <link rel="stylesheet" href="/css/styles.css" /> -->
+    <!-- <script src="/js/scripts.js"></script> -->
+
+    <style>
+      body {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .sys-blue {
+        color: blue;
+      }
+
+      a.hover-underline:hover,
+      a.hover-underline:hover span {
+        text-decoration: underline;
+      }
+
+      .fs80 {
+        font-size: 80%;
+      }
+    </style>
+  </head>
+  <body class="sans-serif h-100">
+    <div class="ma5 lh-copy">
+      <img
+        src="/images/stereo-headphones-black.svg"
+        style="height: 2.75rem;"
+      />
+
+      <!-- <img class="w3" src="/images/dw-triangles-transparent.png" /> -->
+
+      <br /><br />
+
+      <b>STEREO 2.0.1</b><br /><br />
+
+      A helpful tool kit<br />
+
+      for internet makers<br /><br /><br />
+
+      <!-- for pragmatists with deadlines<br /><br /><br /> -->
+
+      <a
+        href="/docs"
+        class="bg-black-90 white pv2 ph3 br2 no-underline hover-underline f6 mr2"
+        >User Manual</a
+      >
+      <!-- <a href="/docs" class="bg-black white pv2 ph3 br2 no-underline hover-underline f6 mr2">Documentation</a> -->
+
+      <!-- <a href="/docs" class="sys-blue">docs</a> &nbsp;|&nbsp; -->
+
+      <!--
+
+  <a href="/components" class="sys-blue">components</a> &nbsp;|&nbsp;
+  
+  <a href="/guide" target="_blank" class="sys-blue">field guide</a> &nbsp;|&nbsp;
+  
+-->
+      <!-- <a href="https://github.com/jyoungblood/darkwave" target="_blank" class="sys-blue">source</a> -->
+      <a
+        href="https://github.com/jyoungblood/stereo"
+        target="_blank"
+        class="bg-black-30 white pv2 ph3 br2 no-underline hover-underline f6"
+        >Source</a
+      >
+
+      <br /><br /><br />
+
+      <span class="f7">
+        <div class="f6 fw6 mb3">Quick start:</div>
+
+        <code class="dib mb3 bg-black-05 pa1"
+          >composer create-project jyoungblood/stereo [new-project-name]</code
+        ><br />
+        <code class="dib mb3 bg-black-05 pa1"
+          >cd [new-project-name]; mv .env.example .env</code
+        ><br />
+        <code class="dib mb3 bg-black-05 pa1">php -S localhost:6969</code><br />
+      </span>
+
+      <br /><br /><br /><br /><br /><br /><br />
+
+      <div class="flex mb2 pl1 tl mb3">
+        <a href="/" class="black no-underline"
+          ><img
+            src="/images/stereo-headphones-black.svg"
+            class=""
+            style="height: 2.75rem;"
+          /></a
+          >
+          <div class="ml2 pl1 pt1 lh-title">
+            <div class="f4 fw7">
+              <a class="black no-underline" href="/">STEREO</a>
+            </div>
+            <div class="f6">
+              <a class="black no-underline" href="/">TOOLKIT 2.0.1</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <br /><br /><br /><br /><br /><br /><br /> -->
+        <!-- <div class="cf f7">
+    <div class="flex items-center">
+      <div class=""><a class="black no-underline" target="_blank" href="https://hxgf.io/"><img style="width: 3.5rem;" class="db" src="./images/hxgf-bug.png" /></a></div>
+      <div class="pl1 ml3 o-50 fs80 ">
+        <div class="">© 2024 <a class="black" target="_blank" href="https://hxgf.io/">HXGF</a></div>
+        (CC) <a class="black" target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/us/">BY-SA 3.0</a>
+      </div>
+    </div>
+  </div> -->
+      </div>
+
+      <a
+        class="absolute bottom-0 right-0 ma3 black no-underline f7 hover-underline hover-bg-black hover-white"
+        href="https://jyoungblood.github.io/">&copy; JY ♥</a
+      >
+
+      <!-- <script src="https://instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script> -->
+      <!-- <script src="https://cdn.skypack.dev/@hotwired/turbo"></script> -->
+    </div>
+  </body>
+</html>
