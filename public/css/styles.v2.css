@@ -1,0 +1,34 @@
+body {
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  /* fathom bg color */
+  background-color: rgb(247, 248, 247);
+}
+
+.sys-blue {
+  color: blue;
+}
+
+a.hover-underline:hover,
+a.hover-underline:hover span {
+  text-decoration: underline;
+}
+
+.fs80 {
+  font-size: 80%;
+}
+
+.fa-purple {
+  color: rgb(149, 128, 255);
+}
+
+.fa-green {
+  color: rgb(51, 204, 102);
+}
+
+.fa-blue {
+  color: rgb(26, 128, 230);
+}
+
+.fa-pink {
+  color: rgb(237, 94, 166);
+}
