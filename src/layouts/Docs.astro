@@ -61,12 +61,9 @@ const { title } = Astro.props;
     <!-- <script src="./js/scripts.js"></script> -->
 
     <script>
-
-
-// fixit if we care
-  // dropdown menu
-  // highlighting current (but only for sublink)
-
+      // fixit if we care
+      // dropdown menu
+      // highlighting current (but only for sublink)
 
       // window.addEventListener("DOMContentLoaded", () => {
       //   const observer = new IntersectionObserver(
@@ -181,9 +178,7 @@ const { title } = Astro.props;
             <a
               class:list={[
                 "",
-                Astro.url.pathname.includes("/docs/what")
-                  ? "current"
-                  : "",
+                Astro.url.pathname.includes("/docs/what") ? "current" : "",
               ]}
               href="/docs/what">What is STEREO?</a
             >
@@ -199,8 +194,19 @@ const { title } = Astro.props;
               href="/docs/installation">Installation</a
             >
           </li>
+          <li>
+            <a
+              class:list={[
+                "",
+                Astro.url.pathname.includes("/docs/deployment")
+                  ? "current"
+                  : "",
+              ]}
+              href="/docs/deployment">Deployment</a
+            >
+          </li>
         </ul>
-<!-- 
+        <!-- 
         <ul>
           <li>
             <a
@@ -222,7 +228,7 @@ const { title } = Astro.props;
           </ul>
         </ul>
  -->
-<!--         
+        <!--         
         <ul>
           <li>
             <a
@@ -236,8 +242,6 @@ const { title } = Astro.props;
           </li>
         </ul>
  -->
-
-
       </nav>
     </section>
 
