@@ -6,14 +6,17 @@ import Layout from "../../layouts/Docs.astro";
   <article style="margin-top: -1px;">
     <h2 id="deployment" class="mt0">Deployment</h2>
 
-    <p>Put the files on your web server...easy huh?</p>
+    <p>Put the files on your web server and set your docroot to the <code>public</code> directory...easy huh?</p>
 
     <p>
-      set your docroot to the <code>public</code> directory. (we have a .htaccess
-      file that does this?) see the <a
+       we have a .htaccess
+      file that handles the routing for apache, see the <a
         href="https://www.slimframework.com/docs/v4/start/web-servers.html"
         >slim deployment</a
-      > docs for more info on deploying w/ various web servers.
+      > docs for more info on deploying with other web servers (nginx, caddy, iis, lighttpd).
     </p>
+
+    <p>// fixit - would be cool to have a copy/paste nginx config here</p>
+
   </article>
 </Layout>
