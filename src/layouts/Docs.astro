@@ -207,6 +207,24 @@ const { title } = Astro.props;
             <a
               class:list={[
                 "",
+                Astro.url.pathname.includes("/docs/rendering") ? "current" : "",
+              ]}
+              href="/docs/rendering">Routing & Rendering</a
+            >
+          </li>
+          <li>
+            <a
+              class:list={[
+                "",
+                Astro.url.pathname.includes("/docs/templates") ? "current" : "",
+              ]}
+              href="/docs/templates">Templates</a
+            >
+          </li>
+          <li>
+            <a
+              class:list={[
+                "",
                 Astro.url.pathname.includes("/docs/deployment")
                   ? "current"
                   : "",
@@ -218,9 +236,7 @@ const { title } = Astro.props;
             <a
               class:list={[
                 "",
-                Astro.url.pathname.includes("/docs/resources")
-                  ? "current"
-                  : "",
+                Astro.url.pathname.includes("/docs/resources") ? "current" : "",
               ]}
               href="/docs/resources">External Resources</a
             >

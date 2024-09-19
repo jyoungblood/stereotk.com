@@ -9,12 +9,12 @@ import Layout from "../../layouts/Docs.astro";
     Application Overview & structure<br /><br />
 
     stereo looks at the [request lifecycle? architecture?] differently from MVC
-    frameworks<br />
+    frameworks<br /><br />
     instead of MVC architecture, we're focused on routes and views. no models, no
     controllers (although you're welcome to do that kind of thing if you want) it's
     like express, catch the request, do whatever logic, return the response
     <br /><br />
-    RV (route view) architecture<br />
+    <b>RV (route view) architecture</b><br />
     based on slim, which gives us a lot "for free" and is flexible enough to support
     this workflow
     <br /><br />
@@ -25,15 +25,23 @@ import Layout from "../../layouts/Docs.astro";
 
     <br /><br />
 
-    we embrace "zero config" ideology as much as possible. any settings should be in the .env file for now, although we may want to change this in the future. 
+    embracing "zero config" ideology as much as possible. MOST settings should be
+    in the .env file for now, but you can set any other settings (php_ini, timezone, etc) in the settings.php file ... it's a blank canvas.
+    <br /><br />
+    sensible defaults so you don't have to make thee decisions, but you have the ability to change if you want.
+    <br /><br />
 
-    <pre>
-  <code>
-.
+    You'll notice this structure doesn't follow the [standard php package]
+    format. focus on being easy to understand, will feel familiar if you've used
+    express.
+
+    <pre><code>
 ├── app                     # 
-│   ├── logs                # 
 │   ├── routes              # 
+│   │   └── index.php       # 
+│   ├── settings.php        # 
 │   └── stereo.php          # 
+├── logs                    # 
 ├── node_modules            # 
 ├── public                  # 
 │   ├── cache               # 
@@ -51,9 +59,21 @@ import Layout from "../../layouts/Docs.astro";
 ├── package.json            # 
 ├── README.md               #  
 └── tailwind.config.json    # 
+</code></pre>
 
-  </code>
-</pre>
+    People ask me all the time: But where are the models? What abouy migrations?
+    Are there seriously no controllers?<br /><br />
+
+    If this matters to you, you should probably look elsewhere. Laravel is
+    great, it has everything. There are like a million MVC frameworks, this is
+    bit different.<br /><br />
+
+    Focused on a very specific workflow (route & templates rule everything),
+    being lean & scrappy, very simple architecture (easy to understand), with
+    build tools pre-configured.<br /><br />
+
+    note on security - aim to provide a resasonably secure and usable (reliable)
+    application, but not going super deep with security measures
 
     <!-- 
     <pre>
