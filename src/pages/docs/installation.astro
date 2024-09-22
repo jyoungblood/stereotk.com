@@ -6,25 +6,38 @@ import Layout from "../../layouts/Docs.astro";
   <article style="margin-top: -1px;">
     <h2 id="intallation" class="mt0">Installation</h2>
 
-    Requirements
+    <h3>Development Requirements</h3>
     <ul>
       <li>php (minversion? 7.4?)</li>
       <li>composer</li>
-      <!-- <li>mysql</li> -->
-      <li>apache or nginx (for deployment, will run locally just fine w/ php's built-in server)</li>
+      <li>mysql if you want a db</li>
+      <!-- <li>your db of choice (supporting mysql, sqlite, postgres, mssql ... anything pdo supports)</li> -->
     </ul>
+
+    <h3>Production Requirements</h3>
+    <ul>
+      <li>
+        apache or nginx (for deployment, will run locally just fine w/ php's
+        built-in server)
+      </li>
+    </ul>
+
+    <br /><br />
+    <hr />
+
+    <br /><br />
 
     apache requires mod_rewrite to be enabled<br />
     idk php required extensions?<br /><br />
 
-
     good to have mysql, but not required.<br /><br />
 
     *** highly recommend dbngin & herd ***
-    
+
+    <br /><br />
     <br /><br />
 
-    install slim & stuff
+    <h3>Install Slim & stuff</h3>
     <p>
       <code>composer create-project jyoungblood/stereo [new-project-name]</code>
     </p>
@@ -34,7 +47,7 @@ import Layout from "../../layouts/Docs.astro";
     <p>you can use herd too</p>
 
     <br /><br />
-    install tailwind & vite (optional)
+    <h3>Install Tailwind & Vite (optional)</h3>
     <p><code>npm install</code></p>
     <p><code>npm run dev</code></p>
 
@@ -106,19 +119,14 @@ import Layout from "../../layouts/Docs.astro";
     
     -->
 
-
-
-
-    CONFIGURATION<br />
+    <h3>Configuration</h3>
     - in the .env file<br />
     &nbsp; - add your db creds<br />
-    &nbsp; - set development mode? ("production" is default) (just affects error reporting rn)<br />
-    - in the settings.php file (don't need to do anything here, but you COULD)<br /><br />
-
+    &nbsp; - set development mode? ("production" is default) (just affects error
+    reporting rn)<br />
+    - in the settings.php file (don't need to do anything here, but you COULD)<br
+    /><br />
 
     NOTE the default db driver, port, and charset
-
-
-
   </article>
 </Layout>

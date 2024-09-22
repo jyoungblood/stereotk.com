@@ -8,7 +8,7 @@ import Layout from "../../layouts/Docs.astro";
 
     Application Overview & structure<br /><br />
 
-    stereo looks at the [request lifecycle? architecture?] differently from MVC
+    stereo looks at the [architecture?] differently from MVC
     frameworks<br /><br />
     instead of MVC architecture, we're focused on routes and views. no models, no
     controllers (although you're welcome to do that kind of thing if you want) it's
@@ -22,13 +22,18 @@ import Layout from "../../layouts/Docs.astro";
     <br /><br />
     BYO db (if you want to do models & migrations, that's fine) (same for controllers,
     tests, etc)
+    <br /><br />
+
+    ?? RVBL FW? - focus on business logic, routing, and views
 
     <br /><br />
 
-    embracing "zero config" ideology as much as possible. MOST settings should be
-    in the .env file for now, but you can set any other settings (php_ini, timezone, etc) in the settings.php file ... it's a blank canvas.
+    embracing "zero config" ideology as much as possible. MOST settings should
+    be in the .env file for now, but you can set any other settings (php_ini,
+    timezone, etc) in the settings.php file ... it's a blank canvas.
     <br /><br />
-    sensible defaults so you don't have to make thee decisions, but you have the ability to change if you want.
+    sensible defaults so you don't have to make thee decisions, but you have the
+    ability to change if you want.
     <br /><br />
 
     You'll notice this structure doesn't follow the [standard php package]
@@ -61,12 +66,13 @@ import Layout from "../../layouts/Docs.astro";
 └── tailwind.config.json    # 
 </code></pre>
 
-    People ask me all the time: But where are the models? What abouy migrations?
-    Are there seriously no controllers?<br /><br />
+    People ask me all the time: But where are the models? What about migrations?
+    Are there seriously no controllers? What about queues? workers? scheduled tasks? tests?
+    What the fuck is wrong with you?<br /><br />
 
-    If this matters to you, you should probably look elsewhere. Laravel is
-    great, it has everything. There are like a million MVC frameworks, this is
-    bit different.<br /><br />
+    If these things matter to you, you should probably look elsewhere. Maybe check out Laravel? 
+    It's great, and it has EVERYTHING. [there's a lot you get FOR FREE that you won't get for free here] ... There are like a million MVC frameworks in general, STEREO
+    has a fundamentally different approach.<br /><br />
 
     Focused on a very specific workflow (route & templates rule everything),
     being lean & scrappy, very simple architecture (easy to understand), with

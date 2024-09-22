@@ -6,12 +6,17 @@ import Layout from "../../layouts/Docs.astro";
   <article style="margin-top: -1px;">
     <h2 id="rendering" class="mt0">Rendering</h2>
 
-    STEREO comes with a convenient [rendering package] for easily responding to
-    http requests using slim.<br /><br />
+    STEREO comes with a convenient <a
+      href="https://github.com/jyoungblood/stereo-render"
+      class="sys-blue" target="_blank">rendering package</a
+    > for easily responding to http requests using <a
+      href="https://www.slimframework.com/docs/v4/objects/routing.html"
+      class="sys-blue" target="_blank">Slim's routing system</a
+    >.<br /><br />
 
-    all your backend stuff will go in the 'routes' folder. and OMG check this out: 
-    add a new file in this dir and that's it (no need to register, we got automatic routing,
-    cool!)
+    all your backend stuff will go in the 'routes' folder. and OMG check this
+    out: add a new file in this dir and that's it (no need to register, we got
+    automatic file inclusion, cool!)
 
     <br /><br />
 
@@ -19,5 +24,13 @@ import Layout from "../../layouts/Docs.astro";
 
     // examples of rendering responses with stereo-render (html, json, blade,
     etc)<br /><br />
+
+
+    NOTE - nothing is stopping you from making a 'app/controllers' folder and writing your own classes for controllers. that's really up to you, it's easy enough to do that [maybe have a little example that's like "look, i did here. bfd"]
+    <br /><br />
+
+    same thing with models, bring your own, install doctrine and make an app/models folder, idgaf. here's an example of if you did that idk.
+
+    
   </article>
 </Layout>

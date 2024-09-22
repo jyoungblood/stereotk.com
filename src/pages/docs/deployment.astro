@@ -15,7 +15,7 @@ import Layout from "../../layouts/Docs.astro";
     <p>
       we have a .htaccess file that handles the routing for apache, see the <a
         href="https://www.slimframework.com/docs/v4/start/web-servers.html"
-        >slim deployment</a
+        class="sys-blue" target="_blank">slim deployment</a
       > docs for more info on deploying with other web servers (nginx, caddy, iis,
       lighttpd).
     </p>
@@ -23,9 +23,18 @@ import Layout from "../../layouts/Docs.astro";
     <p>// fixit - would be cool to have a copy/paste nginx config here</p>
 
     <p>// fixit copy/paste deploy script / instructions</p>
+
+    <p>you could, opf course, just copy the files with ftp. that absolutely works.</p>
+
     <p>
-      here’s our favorite way to deploy to a vps w rsync via ssh (0x00) Hooked
-      up w git, all you gotta do is ./deploy.sh [link to 0x00-stereo-deploy]
+      have a modified version of <a href="https://github.com/jyoungblood/0x00-stereo-deploy" class="sys-blue" target="_blank">0x00-stereo-deploy</a> --- this is our favorite way to deploy to a vps w rsync via ssh. Hooked
+      up w git, all you gotta do is ./deploy.sh 
     </p>
+
+
+    <p>
+      if you add migrations, queues, tests, or whatever stuff in the future, add any necessary deployment commands to this script ... or do whatever, that's really not my problem.
+    </p>
+
   </article>
 </Layout>
