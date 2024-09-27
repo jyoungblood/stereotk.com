@@ -8,8 +8,8 @@ import Layout from "../../layouts/Docs.astro";
 
     Application Overview & structure<br /><br />
 
-    stereo looks at the [architecture?] differently from MVC
-    frameworks<br /><br />
+    stereo looks at the [architecture?] differently from MVC frameworks<br /><br
+    />
     instead of MVC architecture, we're focused on routes and views. no models, no
     controllers (although you're welcome to do that kind of thing if you want) it's
     like express, catch the request, do whatever logic, return the response
@@ -67,12 +67,14 @@ import Layout from "../../layouts/Docs.astro";
 </code></pre>
 
     People ask me all the time: But where are the models? What about migrations?
-    Are there seriously no controllers? What about queues? workers? scheduled tasks? tests?
-    What the fuck is wrong with you?<br /><br />
+    Are there seriously no controllers? What about queues? workers? scheduled
+    tasks? tests? What the fuck is wrong with you?<br /><br />
 
-    If these things matter to you, you should probably look elsewhere. Maybe check out Laravel? 
-    It's great, and it has EVERYTHING. [there's a lot you get FOR FREE that you won't get for free here] ... There are like a million MVC frameworks in general, STEREO
-    has a fundamentally different approach.<br /><br />
+    If these things matter to you, you should probably look elsewhere. Maybe
+    check out Laravel? It's great, and it has EVERYTHING. [there's a lot you get
+    FOR FREE that you won't get for free here] ... There are like a million MVC
+    frameworks in general, STEREO has a fundamentally different approach.<br
+    /><br />
 
     Focused on a very specific workflow (route & templates rule everything),
     being lean & scrappy, very simple architecture (easy to understand), with
@@ -80,38 +82,52 @@ import Layout from "../../layouts/Docs.astro";
 
     note on security - aim to provide a resasonably secure and usable (reliable)
     application, but not going super deep with security measures
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    other stuff<br />
+    - containers - yeah we got 'em, who cares?. more info: <a
+      href="https://www.slimframework.com/docs/v4/concepts/di.html"
+      >slim4 container docs</a
+    ><br />
+
+    - settings.php has all the container stuff right now. nice. add your own stuff or whatever, i haven't done a whole lot with it so i don't really have any strong opinions on the matter.<br /><br />
+
+    <!-- example using settings variables from the container, do this is your route: -->
 
     <!-- 
-    <pre>
-  <code>
-.
-├── build                   # Compiled files (artifacts)
-├── config                  # Configuration files
-├── docs                    # Documentation files
-├── logs                    # Log files
-├── public                  # Web server files
-├── resources               # Other resource files
-│   ├── migrations          # Database migration files
-│   ├── seeds               # Data seeds
-│   └── translations        # The .po message files for PoEdit
-├── src                     # PHP source code (The App namespace)
-│   ├── Action              # Controller actions (HTTP layer)
-│   ├── Console             # Console commands
-│   ├── Domain              # The core application
-│   ├── Renderer            # Render and Url helper (HTTP layer)
-│   ├── Middleware          # Middleware (HTTP layer)
-│   └── Support             # Helper classes and functions
-├── templates               # HTML templates
-├── tests                   # Automated tests
-├── tmp                     # Temporary files
-├── vendor                  # Reserved for composer
-├── build.xml               # Ant build tasks
-├── composer.json           # Project dependencies
-├── LICENSE                 # The license
-└── README.md               # This file
+      $settings = $this->get('settings');
+      $settings['test_setting'] = 'baseball';
+      $this->set('settings', $settings);
 
-  </code>
-</pre> 
--->
+        $test_settings = $this->get('settings');
+        print_r($test_settings); -->
+
+    - middleware! - it's all in middleware.php, put your stuff here! more info: <a
+      href="https://www.slimframework.com/docs/v4/concepts/middleware.html"
+      >slim4 middleware docs</a
+    ><br />
+
+    <!--
+      <pre
+    >
+      <code>
+        . ├── build # Compiled files (artifacts) ├── config # Configuration
+        files ├── docs # Documentation files ├── logs # Log files ├── public #
+        Web server files ├── resources # Other resource files │ ├── migrations #
+        Database migration files │ ├── seeds # Data seeds │ └── translations #
+        The .po message files for PoEdit ├── src # PHP source code (The App
+        namespace) │ ├── Action # Controller actions (HTTP layer) │ ├── Console
+        # Console commands │ ├── Domain # The core application │ ├── Renderer #
+        Render and Url helper (HTTP layer) │ ├── Middleware # Middleware (HTTP
+        layer) │ └── Support # Helper classes and functions ├── templates # HTML
+        templates ├── tests # Automated tests ├── tmp # Temporary files ├──
+        vendor # Reserved for composer ├── build.xml # Ant build tasks ├──
+        composer.json # Project dependencies ├── LICENSE # The license └──
+        README.md # This file
+      </code>
+    </a>
+    -->
   </article>
 </Layout>
