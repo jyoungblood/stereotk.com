@@ -28,6 +28,10 @@ import Layout from "../../layouts/Docs.astro";
 
     <br /><br />
 
+
+
+    <br /><br />
+
     embracing "zero config" ideology as much as possible. MOST settings should
     be in the .env file for now, but you can set any other settings (php_ini,
     timezone, etc) in the settings.php file ... it's a blank canvas.
@@ -65,6 +69,24 @@ import Layout from "../../layouts/Docs.astro";
 ├── README.md               #  
 └── tailwind.config.json    # 
 </code></pre>
+
+<!-- from the old readme -->
+
+<!-- organization - folders for css, js, images, templates, and routes -->
+
+<!-- - Blank CSS and JS placeholder files -->
+
+<!-- - [.env](https://github.com/jyoungblood/stereo/blob/master/.env.example) - helpful basic variables and settings, pre-wired with [phpdotenv](https://github.com/vlucas/phpdotenv) -->
+
+<!-- - [index.php](https://github.com/jyoungblood/stereo/blob/master/index.php) - initialized Slim application w/ middleware, db connection, and default 404 configuration -->
+
+<!-- - [.htaccess](https://github.com/jyoungblood/stereo/blob/master/.htaccess) - routes all non-file urls to index, forces https, and uses gzip for static assets (if available) -->
+
+<!-- - [.gitignore](https://github.com/jyoungblood/stereo/blob/master/.gitignore) - ignores `/vendor`, `.env`, `.vscode`, `error_log`, and `.DS_Store` -->
+
+
+
+
 
     People ask me all the time: But where are the models? What about migrations?
     Are there seriously no controllers? What about queues? workers? scheduled
