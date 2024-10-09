@@ -7,7 +7,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
     integrations: [
         starlight({
-            title: 'Stereo - Internet Toolkit',
+            title: 'Stereo Internet Toolkit',
       logo: {
 				// light: '/src/assets/logo-light.svg',
 				// dark: '/src/assets/logo-dark.svg',
@@ -45,8 +45,8 @@ export default defineConfig({
                 },
 
                 {
-                	label: 'Reference',
-                	autogenerate: { directory: 'reference' },
+                	label: 'Misc',
+                	autogenerate: { directory: 'misc' },
                 },
 
             ],
