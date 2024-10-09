@@ -11,8 +11,8 @@ export default defineConfig({
       logo: {
 				// light: '/src/assets/logo-light.svg',
 				// dark: '/src/assets/logo-dark.svg',
-        light: '/src/assets/stereo-headphones-black.svg',
-				dark: '/src/assets/stereo-headphones-white.svg',
+        light: '/src/assets/stereo-logo-large-black.png',
+				dark: '/src/assets/stereo-logo-large-white.png',
 				replacesTitle: true,
 			},
       customCss: [
