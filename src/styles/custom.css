@@ -108,10 +108,10 @@
 
 /* LIGHT THEME ONLY */
 
-:root, :root[data-theme='light'] {
-  --sl-color-accent-low: #ffc8bf;
+/* :root, :root[data-theme='light'] {
+  --sl-color-accent-low: #cb0002;
   --sl-color-accent: #cb0002;
-  --sl-color-accent-high: #640101;
+  --sl-color-accent-high: #cb0002;
   --sl-color-white: #14191c;
   --sl-color-gray-1: #1d292f;
   --sl-color-gray-2: #2e3a41;
@@ -121,11 +121,11 @@
   --sl-color-gray-6: #e9eff2;
   --sl-color-gray-7: #f4f7f8;
   --sl-color-black: #ffffff;
-}
+} */
 
 
 
-
+/* 
 starlight-theme-select {
   display: none;
 }
@@ -134,4 +134,4 @@ starlight-theme-select {
   content: "";
   height: 0;
   border-inline-end: none;
-}
+} */
