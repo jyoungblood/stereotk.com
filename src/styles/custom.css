@@ -184,10 +184,6 @@ starlight-theme-select {
 
 
 
-.sl-link-button{
-  border-radius: 0.5rem;
-  padding: 1.2rem 1.1rem 1.2rem 1.5rem;
-}
 
 
 .sl-link-button.primary,
@@ -199,6 +195,11 @@ starlight-theme-select {
 :root[data-theme='light'] .sl-link-button.primary, :root[data-theme='light'] [aria-current="page"]{
   color: var(--sl-color-black);
 
+}
+
+.sl-link-button {
+  border-radius: 0.5rem;
+  padding: 1.2rem 1.1rem 1.2rem 1.5rem;
 }
 
 .sl-link-button:hover{
