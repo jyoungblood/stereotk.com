@@ -8,6 +8,11 @@ export default defineConfig({
     integrations: [
         starlight({
             title: 'Stereo Internet Toolkit',
+          components: {
+            TwoColumnContent: '/src/components/TwoColumnContent.astro',
+            ThemeProvider: '/src/components/ThemeProvider.astro',
+            ThemeSelect: '/src/components/ThemeSelect.astro',
+          },
       logo: {
 				// light: '/src/assets/logo-light.svg',
 				// dark: '/src/assets/logo-dark.svg',
