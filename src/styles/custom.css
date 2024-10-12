@@ -197,9 +197,9 @@ starlight-theme-select {
 
 }
 
-.sl-link-button.not-content {
+.hero > .sl-link-button.not-content {
   border-radius: 0.5rem !important;
-  padding: 1.2rem 1.1rem 1.2rem 1.5rem;
+  padding: 1.2rem 1.1rem 1.2rem 1.5rem !important;
 }
 
 .sl-link-button:hover{
