@@ -56,14 +56,14 @@ export default defineConfig({
 
             ],
             head: [
-                {
-                    tag: 'script',
-                    attrs: {
-                        src: 'https://beamanalytics.b-cdn.net/beam.min.js',
-                        'data-token': '4345c349-059a-42dd-8483-67b7c0730da6',
-                        defer: true,
-                    },
-                },
+                // {
+                //     tag: 'script',
+                //     attrs: {
+                //         src: 'https://beamanalytics.b-cdn.net/beam.min.js',
+                //         'data-token': '4345c349-059a-42dd-8483-67b7c0730da6',
+                //         defer: true,
+                //     },
+                // },
             ],
         }),
     tailwind({
